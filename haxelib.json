@@ -1,0 +1,17 @@
+{
+	"name": "libraries",
+	"description": "",
+	"dependencies": {},
+	"url": "https://github.com/go2hx/libraries",
+	"contributors": [
+		"pxshadow",
+		"elliott5"
+	],
+	"version": "0.0.1",
+	"tags": [
+		"unicode",
+		"math",
+		"strings"
+	],
+	"license": "MIT"
+}

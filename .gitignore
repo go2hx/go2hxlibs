@@ -1,0 +1,10 @@
+.DS_STORE
+go2hx
+bin
+export
+style2.css
+Host.hx
+host.hxml
+*.hl
+notes.txt
+golibs
