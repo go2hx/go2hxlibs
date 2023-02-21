@@ -41,5 +41,6 @@
     "github.com/yosuke-furukawa/json5",
     "github.com/vbauerster/mpb",
     "github.com/bitfield/script",
-    "go.uber.org/zap"
+    "go.uber.org/zap",
+    "golang.org/x/example/stringutil"
 ]
