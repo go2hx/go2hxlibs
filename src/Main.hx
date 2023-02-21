@@ -3,7 +3,6 @@ import haxe.Json;
 import sys.io.File;
 import sys.FileSystem;
 import haxe.io.Path;
-
 function main() {
     if (!FileSystem.exists("go2hx"))
         Sys.command("git clone --depth 1 https://github.com/go2hx/go2hx");
@@ -69,9 +68,12 @@ function libs() {
     final libs:Array<String> = Json.parse(File.getContent("libs.json"));
     for (lib in libs) {
         final lib_name = formatLibName(lib);
-        Sys.command('go get -t $lib');
         Sys.command('haxelib run go2hx --test --norun --hxml $lib_name.hxml $lib');
-        Sys.command('go get -t $lib@none');
+        // go2hxdoc runs here
+
+        // if there is a regression don't commit
+
+        // run only self contained code, don't allow go2hx lib to be added to the hxml
     }
 }
 
