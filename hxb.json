@@ -1,0 +1,17 @@
+{
+	"archivePath": "go2hxlibs.$target.zip",
+	"targetConfig": {
+		"exclude": [
+			"stdgo._internal.internal",
+			"stdgo._internal.internal.HxbTypeInfoData"
+		],
+		"generateDocumentation": false
+	},
+	"macroConfig": {
+		"exclude": [
+			"stdgo._internal.internal",
+			"stdgo._internal.internal.HxbTypeInfoData"
+        ],
+		"generateDocumentation": false
+	}
+}
