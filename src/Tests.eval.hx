@@ -15,6 +15,7 @@ function main() {
     wait();
     createHxb();
     wait();
+    listDirectory();
     buildHxmls();
     wait();
     runHxmls();
@@ -86,6 +87,12 @@ function cleanup() {
     for (i in 0...libs.length) {
         if (FileSystem.exists('$i.hxml'))
             FileSystem.deleteFile('$i.hxml');
+    }
+}
+
+function listDirectory() {
+    for (path in sys.FileSystem.readDirectory(".")) {
+        Sys.println(path);
     }
 }
 
