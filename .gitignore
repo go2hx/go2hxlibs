@@ -7,4 +7,5 @@ Host.hx
 host.hxml
 *.hl
 notes.txt
-golibs
+*.out
+build
