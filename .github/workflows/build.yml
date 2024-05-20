@@ -30,11 +30,11 @@ jobs:
       - name: Run lix
         run: npx lix download
       - name: Download go2hx lib
-        run: haxelib git go2hx https://github.com/go2hx/go2hx
+        run: npx haxelib git go2hx https://github.com/go2hx/go2hx
       - name: Setup go2hx
-        run: haxelib run go2hx build
+        run: npx haxelib run go2hx build
       - name: extraParams gen
-        run: haxelib run go2hx extraParams
+        run: npx haxelib run go2hx extraParams
       - name: Build
         run: npx haxe build.hxml
       - uses: stefanzweifel/git-auto-commit-action@v4
