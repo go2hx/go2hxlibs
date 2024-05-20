@@ -1,8 +1,9 @@
 {
-	"name": "libraries",
+	"classPath": "golibs",
+	"name": "golibs",
 	"description": "",
 	"dependencies": {},
-	"url": "https://github.com/go2hx/libraries",
+	"url": "https://github.com/go2hx/golibs",
 	"contributors": [
 		"pxshadow",
 		"elliott5"
