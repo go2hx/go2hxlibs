@@ -30,6 +30,8 @@ jobs:
         run: npx lix download
       - name: Download go2hx lib
         run: haxelib git go2hx https://github.com/go2hx/go2hx
+      - name: Setup go2hx
+        run: haxelib run go2hx build
       - name: extraParams gen
         run: haxelib run go2hx extraParams
       - name: Build
