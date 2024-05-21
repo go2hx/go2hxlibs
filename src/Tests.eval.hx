@@ -2,43 +2,72 @@ import sys.FileSystem;
 import sys.io.File;
 
 final libs = [
-    "unicode",
-    "unicode/utf8",
-    "unicode/utf16",
-    "math",
-    "strings",
     "bytes",
+    "encoding/base64",
+    "encoding/hex",
+    "errors",
+    "hash/adler32",
+    "math",
+    "math/bits",
+    "path",
+    "sort",
+    "strconv",
+    "strings",
+    "text/scanner",
+    "unicode",
+    "unicode/utf16",
+    "unicode/utf8"
 ];
 
 var runnningCount = 0;
 var runningCountMutex = new sys.thread.Mutex();
+var hxbBool = false;
 
 function main() {
     // create hxmls
-    createHxmls();
-    wait();
-    createHxb();
-    wait();
-    listDirectory();
-    buildHxmls();
-    wait();
-    runHxmls();
-    wait();
-    cleanup();
-    Sys.println("EXIT");
+    var state = 0;
+    final args = Sys.args();
+    if (args.length > 0) {
+        state = Std.parseInt(args[0]);
+    }
+    while (true) {
+        switch state {
+            case 0:
+                createHxmls();
+                wait();
+            case 1:
+                if (hxbBool) {
+                    createHxb();
+                    wait();
+                }
+            case 2:
+                listDirectory();
+                buildHxmls();
+                wait();
+            case 3:
+                runHxmls();
+                wait();
+            case 4:
+                cleanup();
+                Sys.println("EXIT");
+            default:
+                break;
+        }
+        state++;
+    }
 }
 
 function wait() {
     while (runnningCount > 0) {
         Sys.println("RUN COUNT: " + runnningCount);
-        Sys.sleep(10);
+        Sys.sleep(2);
     }
     Sys.println("END WAIT");
 }
 
 function createHxmls() {
     for (i in 0...libs.length) {
-        runCommand(libs[i], 'haxelib run go2hx -compiler_interp -nodep ${libs[i]} --norun --test --hxml $i.hxml');
+        runCommand(libs[i], 'haxelib run go2hx -compiler_interp -nodep -port ${4000 + i} ${libs[i]} --norun --test --hxml $i.hxml');
     }
 }
 
@@ -53,7 +82,7 @@ final targets = [
 function buildHxmls() {
     for (i in 0...libs.length) {
         for (target in targets) {
-            runCommand(libs[i], 'haxe $i.hxml --hxb-lib go2hxlibs.zip ' + buildTarget(target, '$i'));
+            runCommand(libs[i], 'haxe $i.hxml ' + buildTarget(target, '$i') + (hxbBool ? ' --hxb-lib go2hxlibs.zip' : ''));
         }
     }
 }
@@ -62,28 +91,38 @@ function runHxmls() {
     for (i in 0...libs.length) {
         for (target in targets) {
             if (target != "interp") {
-                runCommand(libs[i], runTarget(target, '$i', [], mainFromHxml('$i.hxml')));
+                runCommand(libs[i], runTarget(target, '$i', [], mainFromHxml('$i.hxml')), false);
             }
         }
     }
 }
 
-function runCommand(libName:String, command:String) {
+function runCommand(libName:String, command:String, usingThread:Bool=true) {
     Sys.println('$libName : $command');
-    runnningCount++;
     var code = 0;
-    tp.run(() -> {
+    if (usingThread) {
+        runnningCount++;
+        tp.run(() -> {
+            code = Sys.command(command);
+            if (code != 0) {
+                Sys.println('$libName failed to run command: $command');
+                tp.shutdown();
+                Sys.exit(1);
+            }
+            trace('FINISH COMMAND: $command');
+            runningCountMutex.acquire();
+            runnningCount--;
+            runningCountMutex.release();
+        });
+    }else{
         code = Sys.command(command);
         if (code != 0) {
             Sys.println('$libName failed to run command: $command');
             tp.shutdown();
             Sys.exit(1);
         }
-        trace('FINISH COMMAND: $code $command');
-        runningCountMutex.acquire();
-        runnningCount--;
-        runningCountMutex.release();
-    });
+        trace('FINISH COMMAND: $command');
+    }
 }
 
 function cleanup() {
