@@ -14,7 +14,6 @@ var runnningCount = 0;
 var runningCountMutex = new sys.thread.Mutex();
 
 function main() {
-    cleanup();
     // create hxmls
     createHxmls();
     wait();
@@ -153,4 +152,4 @@ function runTarget(target:String, out:String, args:Array<String>, main:String):S
 	return s;
 }
 
-final tp = new sys.thread.ElasticThreadPool(8, 60);
+final tp = new sys.thread.ElasticThreadPool(2, 120);

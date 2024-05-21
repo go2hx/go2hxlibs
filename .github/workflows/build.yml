@@ -35,6 +35,8 @@ jobs:
         run: npx haxelib run go2hx build
       - name: extraParams gen
         run: npx haxelib run go2hx extraParams
+      - name: cat extraParams
+        run: cat extraParams.hxml
       - name: Build
         run: npx haxe build.hxml
       - uses: stefanzweifel/git-auto-commit-action@v4
