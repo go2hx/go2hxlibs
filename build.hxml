@@ -1,3 +1,2 @@
 -cp src
--m Tests
---interp
+--run Tests
