@@ -1,9 +1,5 @@
 package stdgo.hash.adler32;
 final size : haxe.UInt64 = stdgo._internal.hash.adler32.Adler32.size;
-class T__struct_0_static_extension {
-
-}
-typedef T__struct_0 = stdgo._internal.hash.adler32.Adler32.T__struct_0;
 typedef T_digest = stdgo._internal.hash.adler32.Adler32.T_digest;
 class T_digest_static_extension {
     static public function sum(____:T_digest, _d:stdgo.Pointer<T_digest>, _in:Array<StdTypes.Int>):Array<StdTypes.Int> {
@@ -68,14 +64,5 @@ class Adler32 {
     static public function checksum(_data:Array<StdTypes.Int>):std.UInt {
         final _data = ([for (i in _data) i] : stdgo.Slice<stdgo.GoByte>);
         return stdgo._internal.hash.adler32.Adler32.checksum(_data);
-    }
-    static public function testGolden(_t:stdgo._internal.testing.Testing.T_):Void {
-        stdgo._internal.hash.adler32.Adler32.testGolden(_t);
-    }
-    static public function testGoldenMarshal(_t:stdgo._internal.testing.Testing.T_):Void {
-        stdgo._internal.hash.adler32.Adler32.testGoldenMarshal(_t);
-    }
-    static public function benchmarkAdler32KB(_b:stdgo._internal.testing.Testing.B):Void {
-        stdgo._internal.hash.adler32.Adler32.benchmarkAdler32KB(_b);
     }
 }

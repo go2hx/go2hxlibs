@@ -184,54 +184,6 @@ position);
     public function __underlying__() return stdgo.Go.toInterface(this);
     public function __copy__() return this.__copy__();
 }
-@:structInit @:using(stdgo.text.scanner.Scanner.StringReader_static_extension) abstract StringReader(stdgo._internal.text.scanner.Scanner.StringReader) from stdgo._internal.text.scanner.Scanner.StringReader to stdgo._internal.text.scanner.Scanner.StringReader {
-    public var _data(get, set) : Array<String>;
-    function get__data():Array<String> return [for (i in this._data) i];
-    function set__data(v:Array<String>):Array<String> {
-        this._data = ([for (i in v) i] : stdgo.Slice<stdgo.GoString>);
-        return v;
-    }
-    public var _step(get, set) : StdTypes.Int;
-    function get__step():StdTypes.Int return this._step;
-    function set__step(v:StdTypes.Int):StdTypes.Int {
-        this._step = v;
-        return v;
-    }
-    public function new(?_data:Array<String>, ?_step:StdTypes.Int) this = new stdgo._internal.text.scanner.Scanner.StringReader(([for (i in _data) i] : stdgo.Slice<stdgo.GoString>), _step);
-    public function __underlying__() return stdgo.Go.toInterface(this);
-    public function __copy__() return this.__copy__();
-}
-@:structInit @:private abstract T_token(stdgo._internal.text.scanner.Scanner.T_token) from stdgo._internal.text.scanner.Scanner.T_token to stdgo._internal.text.scanner.Scanner.T_token {
-    public var _tok(get, set) : StdTypes.Int;
-    function get__tok():StdTypes.Int return this._tok;
-    function set__tok(v:StdTypes.Int):StdTypes.Int {
-        this._tok = v;
-        return v;
-    }
-    public var _text(get, set) : String;
-    function get__text():String return this._text;
-    function set__text(v:String):String {
-        this._text = v;
-        return v;
-    }
-    public function new(?_tok:StdTypes.Int, ?_text:String) this = new stdgo._internal.text.scanner.Scanner.T_token(_tok, _text);
-    public function __underlying__() return stdgo.Go.toInterface(this);
-    public function __copy__() return this.__copy__();
-}
-@:structInit @:private @:using(stdgo.text.scanner.Scanner.T_errReader_static_extension) abstract T_errReader(stdgo._internal.text.scanner.Scanner.T_errReader) from stdgo._internal.text.scanner.Scanner.T_errReader to stdgo._internal.text.scanner.Scanner.T_errReader {
-    public function new() this = new stdgo._internal.text.scanner.Scanner.T_errReader();
-    public function __underlying__() return stdgo.Go.toInterface(this);
-    public function __copy__() return this.__copy__();
-}
-class T__struct_0_static_extension {
-
-}
-typedef T__struct_0 = stdgo._internal.text.scanner.Scanner.T__struct_0;
-class T__struct_1_static_extension {
-
-}
-typedef T__struct_1 = stdgo._internal.text.scanner.Scanner.T__struct_1;
-typedef T_countReader = stdgo._internal.text.scanner.Scanner.T_countReader;
 class Position_static_extension {
     static public function string(_pos:Position):String {
         return stdgo._internal.text.scanner.Scanner.Position_static_extension.string(_pos);
@@ -311,33 +263,6 @@ class Scanner__static_extension {
         return stdgo._internal.text.scanner.Scanner.Scanner_static_extension.isValid(__self__);
     }
 }
-class StringReader_static_extension {
-    static public function read(_r:StringReader, _p:Array<StdTypes.Int>):stdgo.Tuple<StdTypes.Int, stdgo.Error> {
-        final _p = ([for (i in _p) i] : stdgo.Slice<stdgo.GoByte>);
-        return {
-            final obj = stdgo._internal.text.scanner.Scanner.StringReader_static_extension.read(_r, _p);
-            { _0 : obj._0, _1 : obj._1 };
-        };
-    }
-}
-class T_errReader_static_extension {
-    static public function read(_:T_errReader, _b:Array<StdTypes.Int>):stdgo.Tuple<StdTypes.Int, stdgo.Error> {
-        final _b = ([for (i in _b) i] : stdgo.Slice<stdgo.GoByte>);
-        return {
-            final obj = stdgo._internal.text.scanner.Scanner.T_errReader_static_extension.read(_, _b);
-            { _0 : obj._0, _1 : obj._1 };
-        };
-    }
-}
-class T_countReader_static_extension {
-    static public function read(____:T_countReader, _r:stdgo.Pointer<T_countReader>, _0:Array<StdTypes.Int>):stdgo.Tuple<StdTypes.Int, stdgo.Error> {
-        final _0 = ([for (i in _0) i] : stdgo.Slice<stdgo.GoByte>);
-        return {
-            final obj = stdgo._internal.text.scanner.Scanner.T_countReader_static_extension.read(____, _r, _0);
-            { _0 : obj._0, _1 : obj._1 };
-        };
-    }
-}
 /**
     Package scanner provides a scanner and tokenizer for UTF-8-encoded text.
     It takes an io.Reader providing the source, which then can be tokenized
@@ -356,59 +281,5 @@ class Scanner {
     **/
     static public function tokenString(_tok:StdTypes.Int):String {
         return stdgo._internal.text.scanner.Scanner.tokenString(_tok);
-    }
-    static public function testNext(_t:stdgo._internal.testing.Testing.T_):Void {
-        stdgo._internal.text.scanner.Scanner.testNext(_t);
-    }
-    static public function testScan(_t:stdgo._internal.testing.Testing.T_):Void {
-        stdgo._internal.text.scanner.Scanner.testScan(_t);
-    }
-    static public function testInvalidExponent(_t:stdgo._internal.testing.Testing.T_):Void {
-        stdgo._internal.text.scanner.Scanner.testInvalidExponent(_t);
-    }
-    static public function testPosition(_t:stdgo._internal.testing.Testing.T_):Void {
-        stdgo._internal.text.scanner.Scanner.testPosition(_t);
-    }
-    static public function testScanZeroMode(_t:stdgo._internal.testing.Testing.T_):Void {
-        stdgo._internal.text.scanner.Scanner.testScanZeroMode(_t);
-    }
-    static public function testScanSelectedMask(_t:stdgo._internal.testing.Testing.T_):Void {
-        stdgo._internal.text.scanner.Scanner.testScanSelectedMask(_t);
-    }
-    static public function testScanCustomIdent(_t:stdgo._internal.testing.Testing.T_):Void {
-        stdgo._internal.text.scanner.Scanner.testScanCustomIdent(_t);
-    }
-    static public function testScanNext(_t:stdgo._internal.testing.Testing.T_):Void {
-        stdgo._internal.text.scanner.Scanner.testScanNext(_t);
-    }
-    static public function testScanWhitespace(_t:stdgo._internal.testing.Testing.T_):Void {
-        stdgo._internal.text.scanner.Scanner.testScanWhitespace(_t);
-    }
-    static public function testError(_t:stdgo._internal.testing.Testing.T_):Void {
-        stdgo._internal.text.scanner.Scanner.testError(_t);
-    }
-    static public function testIOError(_t:stdgo._internal.testing.Testing.T_):Void {
-        stdgo._internal.text.scanner.Scanner.testIOError(_t);
-    }
-    static public function testPos(_t:stdgo._internal.testing.Testing.T_):Void {
-        stdgo._internal.text.scanner.Scanner.testPos(_t);
-    }
-    static public function testNextEOFHandling(_t:stdgo._internal.testing.Testing.T_):Void {
-        stdgo._internal.text.scanner.Scanner.testNextEOFHandling(_t);
-    }
-    static public function testScanEOFHandling(_t:stdgo._internal.testing.Testing.T_):Void {
-        stdgo._internal.text.scanner.Scanner.testScanEOFHandling(_t);
-    }
-    static public function testIssue29723(_t:stdgo._internal.testing.Testing.T_):Void {
-        stdgo._internal.text.scanner.Scanner.testIssue29723(_t);
-    }
-    static public function testNumbers(_t:stdgo._internal.testing.Testing.T_):Void {
-        stdgo._internal.text.scanner.Scanner.testNumbers(_t);
-    }
-    static public function testIssue30320(_t:stdgo._internal.testing.Testing.T_):Void {
-        stdgo._internal.text.scanner.Scanner.testIssue30320(_t);
-    }
-    static public function testIssue50909(_t:stdgo._internal.testing.Testing.T_):Void {
-        stdgo._internal.text.scanner.Scanner.testIssue50909(_t);
     }
 }

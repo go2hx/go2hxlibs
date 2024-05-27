@@ -1,7 +1,5 @@
 package stdgo._internal.unicode.utf16;
 private var __go2hxdoc__package : Bool;
-final maxRune : stdgo.GoInt32 = (1114111 : stdgo.GoInt32);
-final replacementChar : stdgo.GoInt32 = (65533 : stdgo.GoInt32);
 final _replacementChar : stdgo.GoInt32 = (65533 : stdgo.GoInt32);
 final _maxRune : stdgo.GoInt32 = (1114111 : stdgo.GoInt32);
 final _surr1 : stdgo.GoUInt64 = (55296i64 : stdgo.GoUInt64);

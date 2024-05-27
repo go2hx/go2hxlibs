@@ -1,6 +1,4 @@
 package stdgo.unicode.utf16;
-final maxRune : StdTypes.Int = stdgo._internal.unicode.utf16.Utf16.maxRune;
-final replacementChar : StdTypes.Int = stdgo._internal.unicode.utf16.Utf16.replacementChar;
 /**
     Package utf16 implements encoding and decoding of UTF-16 sequences.
 **/

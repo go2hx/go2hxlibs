@@ -115,12 +115,6 @@ class StringSlice_static_extension {
     Package sort provides primitives for sorting slices and user-defined collections.
 **/
 class Sort {
-    static public function heapsort(_data:Interface):Void {
-        stdgo._internal.sort.Sort.heapsort(_data);
-    }
-    static public function reverseRange(_data:Interface, _a:StdTypes.Int, _b:StdTypes.Int):Void {
-        stdgo._internal.sort.Sort.reverseRange(_data, _a, _b);
-    }
     /**
         Search uses binary search to find and return the smallest index i
         in [0, n) at which f(i) is true, assuming that on the range [0, n),

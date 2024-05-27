@@ -74,12 +74,6 @@ typedef Interface = stdgo.StructType & {
 @:named @:using(stdgo._internal.sort.Sort.IntSlice_static_extension) typedef IntSlice = stdgo.Slice<stdgo.GoInt>;
 @:named @:using(stdgo._internal.sort.Sort.Float64Slice_static_extension) typedef Float64Slice = stdgo.Slice<stdgo.GoFloat64>;
 @:named @:using(stdgo._internal.sort.Sort.StringSlice_static_extension) typedef StringSlice = stdgo.Slice<stdgo.GoString>;
-function heapsort(_data:Interface):Void {
-        _heapSort(_data, (0 : stdgo.GoInt), _data.len());
-    }
-function reverseRange(_data:Interface, _a:stdgo.GoInt, _b:stdgo.GoInt):Void {
-        _reverseRange(_data, _a, _b);
-    }
 function search(_n:stdgo.GoInt, _f:stdgo.GoInt -> Bool):stdgo.GoInt {
         var __0:stdgo.GoInt = (0 : stdgo.GoInt), __1:stdgo.GoInt = _n, _j:stdgo.GoInt = __1, _i:stdgo.GoInt = __0;
         while ((_i < _j : Bool)) {

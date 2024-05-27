@@ -336,12 +336,6 @@ class Replacer_static_extension {
     static public function _buildOnce(_r:Replacer):Void {
         stdgo._internal.strings.Strings.Replacer_static_extension._buildOnce(_r);
     }
-    static public function printTrie(_r:Replacer):String {
-        return stdgo._internal.strings.Strings.Replacer_static_extension.printTrie(_r);
-    }
-    static public function replacer(_r:Replacer):stdgo.AnyInterface {
-        return stdgo._internal.strings.Strings.Replacer_static_extension.replacer(_r);
-    }
 }
 class T_trieNode_static_extension {
     static public function _add(_t:T_trieNode, _key:String, _val:String, _priority:StdTypes.Int, _r:T_genericReplacer):Void {
@@ -363,9 +357,6 @@ class T_genericReplacer_static_extension {
             final obj = stdgo._internal.strings.Strings.T_genericReplacer_static_extension._lookup(_r, _s, _ignoreRoot);
             { _0 : obj._0, _1 : obj._1, _2 : obj._2 };
         };
-    }
-    static public function _printNode(_r:T_genericReplacer, _t:T_trieNode, _depth:StdTypes.Int):String {
-        return stdgo._internal.strings.Strings.T_genericReplacer_static_extension._printNode(_r, _t, _depth);
     }
 }
 class T_stringWriter_static_extension {
@@ -465,15 +456,6 @@ class Strings {
     **/
     static public function compare(_a:String, _b:String):StdTypes.Int {
         return stdgo._internal.strings.Strings.compare(_a, _b);
-    }
-    static public function stringFind(_pattern:String, _text:String):StdTypes.Int {
-        return stdgo._internal.strings.Strings.stringFind(_pattern, _text);
-    }
-    static public function dumpTables(_pattern:String):stdgo.Tuple<Array<StdTypes.Int>, Array<StdTypes.Int>> {
-        return {
-            final obj = stdgo._internal.strings.Strings.dumpTables(_pattern);
-            { _0 : [for (i in obj._0) i], _1 : [for (i in obj._1) i] };
-        };
     }
     /**
         NewReader returns a new Reader reading from s.

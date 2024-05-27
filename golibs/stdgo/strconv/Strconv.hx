@@ -12,18 +12,6 @@ private function set_errSyntax(v:stdgo.Error):stdgo.Error {
     stdgo._internal.strconv.Strconv.errSyntax = v;
     return v;
 }
-var bitSizeError(get, set) : (stdgo.GoString, stdgo.GoString, stdgo.GoInt) -> stdgo.Ref<stdgo._internal.strconv.Strconv.NumError>;
-private function get_bitSizeError():(stdgo.GoString, stdgo.GoString, stdgo.GoInt) -> stdgo.Ref<stdgo._internal.strconv.Strconv.NumError> return (_0, _1, _2) -> stdgo._internal.strconv.Strconv.bitSizeError(_0, _1, _2);
-private function set_bitSizeError(v:(stdgo.GoString, stdgo.GoString, stdgo.GoInt) -> stdgo.Ref<stdgo._internal.strconv.Strconv.NumError>):(stdgo.GoString, stdgo.GoString, stdgo.GoInt) -> stdgo.Ref<stdgo._internal.strconv.Strconv.NumError> {
-    stdgo._internal.strconv.Strconv.bitSizeError = v;
-    return v;
-}
-var baseError(get, set) : (stdgo.GoString, stdgo.GoString, stdgo.GoInt) -> stdgo.Ref<stdgo._internal.strconv.Strconv.NumError>;
-private function get_baseError():(stdgo.GoString, stdgo.GoString, stdgo.GoInt) -> stdgo.Ref<stdgo._internal.strconv.Strconv.NumError> return (_0, _1, _2) -> stdgo._internal.strconv.Strconv.baseError(_0, _1, _2);
-private function set_baseError(v:(stdgo.GoString, stdgo.GoString, stdgo.GoInt) -> stdgo.Ref<stdgo._internal.strconv.Strconv.NumError>):(stdgo.GoString, stdgo.GoString, stdgo.GoInt) -> stdgo.Ref<stdgo._internal.strconv.Strconv.NumError> {
-    stdgo._internal.strconv.Strconv.baseError = v;
-    return v;
-}
 @:structInit @:using(stdgo.strconv.Strconv.NumError_static_extension) abstract NumError(stdgo._internal.strconv.Strconv.NumError) from stdgo._internal.strconv.Strconv.NumError to stdgo._internal.strconv.Strconv.NumError {
     public var func(get, set) : String;
     function get_func():String return this.func;
@@ -426,24 +414,6 @@ class Strconv {
     static public function appendFloat(_dst:Array<StdTypes.Int>, _f:StdTypes.Float, _fmt:StdTypes.Int, _prec:StdTypes.Int, _bitSize:StdTypes.Int):Array<StdTypes.Int> {
         final _dst = ([for (i in _dst) i] : stdgo.Slice<stdgo.GoByte>);
         return [for (i in stdgo._internal.strconv.Strconv.appendFloat(_dst, _f, _fmt, _prec, _bitSize)) i];
-    }
-    static public function newDecimal(_i:haxe.UInt64):T_decimal {
-        return stdgo._internal.strconv.Strconv.newDecimal(_i);
-    }
-    static public function setOptimize(_b:Bool):Bool {
-        return stdgo._internal.strconv.Strconv.setOptimize(_b);
-    }
-    static public function parseFloatPrefix(_s:String, _bitSize:StdTypes.Int):stdgo.Tuple.Tuple3<StdTypes.Float, StdTypes.Int, stdgo.Error> {
-        return {
-            final obj = stdgo._internal.strconv.Strconv.parseFloatPrefix(_s, _bitSize);
-            { _0 : obj._0, _1 : obj._1, _2 : obj._2 };
-        };
-    }
-    static public function mulByLog2Log10(_x:StdTypes.Int):StdTypes.Int {
-        return stdgo._internal.strconv.Strconv.mulByLog2Log10(_x);
-    }
-    static public function mulByLog10Log2(_x:StdTypes.Int):StdTypes.Int {
-        return stdgo._internal.strconv.Strconv.mulByLog10Log2(_x);
     }
     /**
         FormatUint returns the string representation of i in the given base,

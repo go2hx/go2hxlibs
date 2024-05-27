@@ -22,7 +22,6 @@ var _asciiSpace : stdgo.GoArray<stdgo.GoUInt8> = {
     s[32] = (1 : stdgo.GoUInt8);
     s;
 };
-var indexBytePortable : (stdgo.Slice<stdgo.GoUInt8>, stdgo.GoUInt8) -> stdgo.GoInt = _indexBytePortable;
 @:structInit @:using(stdgo._internal.bytes.Bytes.Buffer_static_extension) class Buffer {
     public var _buf : stdgo.Slice<stdgo.GoUInt8> = (null : stdgo.Slice<stdgo.GoUInt8>);
     public var _off : stdgo.GoInt = 0;

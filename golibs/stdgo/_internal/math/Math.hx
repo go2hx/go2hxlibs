@@ -148,7 +148,6 @@ final _f6 : stdgo.GoFloat64 = (2.010321207683943e-07 : stdgo.GoFloat64);
 final _f7 : stdgo.GoFloat64 = (2.8910246058729655e-15 : stdgo.GoFloat64);
 final _haveArchExp2 : Bool = false;
 final _haveArchExp : Bool = false;
-final reduceThreshold : stdgo.GoUInt64 = (536870912i64 : stdgo.GoUInt64);
 final _haveArchFloor : Bool = true;
 final _haveArchCeil : Bool = true;
 final _haveArchTrunc : Bool = true;
@@ -323,11 +322,6 @@ var _mPi4 : stdgo.GoArray<stdgo.GoUInt64> = (new stdgo.GoArray<stdgo.GoUInt64>(2
 (8795094592981902804i64 : stdgo.GoUInt64),
 (-2884908082597807600i64 : stdgo.GoUInt64),
 (-6051042886442100905i64 : stdgo.GoUInt64)]).__setNumber64__() : stdgo.GoArray<stdgo.GoUInt64>);
-var expGo : stdgo.GoFloat64 -> stdgo.GoFloat64 = _exp;
-var exp2Go : stdgo.GoFloat64 -> stdgo.GoFloat64 = _exp2;
-var hypotGo : (stdgo.GoFloat64, stdgo.GoFloat64) -> stdgo.GoFloat64 = _hypot;
-var sqrtGo : stdgo.GoFloat64 -> stdgo.GoFloat64 = _sqrt;
-var trigReduce : stdgo.GoFloat64 -> { var _0 : stdgo.GoUInt64; var _1 : stdgo.GoFloat64; } = _trigReduce;
 function abs(_x:stdgo.GoFloat64):stdgo.GoFloat64 return std.Math.abs(_x.toBasic());
 function acosh(_x:stdgo.GoFloat64):stdgo.GoFloat64 {
     if (false) {

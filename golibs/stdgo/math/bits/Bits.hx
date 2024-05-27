@@ -1,6 +1,5 @@
 package stdgo.math.bits;
 final uintSize : haxe.UInt64 = stdgo._internal.math.bits.Bits.uintSize;
-final deBruijn64 : haxe.UInt64 = stdgo._internal.math.bits.Bits.deBruijn64;
 /**
     Package bits implements bit counting and manipulation
     functions for the predeclared unsigned integer types.
