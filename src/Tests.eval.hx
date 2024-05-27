@@ -54,7 +54,7 @@ function main() {
             case 4:
                 createNonTestPkgs();
                 wait();
-            case 4:
+            case 5:
                 cleanup();
                 Sys.println("EXIT");
             default:
