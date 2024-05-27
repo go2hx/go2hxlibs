@@ -22,13 +22,17 @@ final libs = [
 var runnningCount = 0;
 var runningCountMutex = new sys.thread.Mutex();
 var hxbBool = false;
+var ciBool = false;
 
 function main() {
     // create hxmls
     var state = 0;
     final args = Sys.args();
     if (args.length > 0) {
-        state = Std.parseInt(args[0]);
+        ciBool = args[0] == "1";
+    }
+    if (args.length > 1) {
+        state = Std.parseInt(args[1]);
     }
     while (true) {
         switch state {
@@ -67,12 +71,12 @@ function wait() {
 
 function createHxmls() {
     for (i in 0...libs.length) {
-        runCommand(libs[i], 'haxelib run go2hx -compiler_interp -nodep -port ${4000 + i} ${libs[i]} --norun --test --hxml $i.hxml');
+        runCommand(libs[i], (ciBool ? 'npx ' : '') + 'haxelib run go2hx -compiler_interp -nodep -port ${4000 + i} ${libs[i]} --norun --test --hxml $i.hxml');
     }
 }
 
 function createHxb() {
-    runCommand('hxb', 'haxelib run go2hx hxb golibs');
+    runCommand('hxb', (ciBool ? 'npx ' : '') + 'haxelib run go2hx hxb golibs');
 }
 
 final targets = [
@@ -82,7 +86,7 @@ final targets = [
 function buildHxmls() {
     for (i in 0...libs.length) {
         for (target in targets) {
-            runCommand(libs[i], 'haxe $i.hxml ' + buildTarget(target, '$i') + (hxbBool ? ' --hxb-lib go2hxlibs.zip' : ''));
+            runCommand(libs[i], (ciBool ? 'npx ' : '') + 'haxe $i.hxml ' + buildTarget(target, '$i') + (hxbBool ? ' --hxb-lib go2hxlibs.zip' : ''));
         }
     }
 }
