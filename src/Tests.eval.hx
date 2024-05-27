@@ -21,7 +21,7 @@ final libs = [
 
 var runnningCount = 0;
 var runningCountMutex = new sys.thread.Mutex();
-var hxbBool = false;
+var hxbBool = true;
 var ciBool = false;
 
 function main() {
