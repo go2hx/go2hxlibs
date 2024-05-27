@@ -21,7 +21,7 @@ final libs = [
 
 var runnningCount = 0;
 var runningCountMutex = new sys.thread.Mutex();
-var hxbBool = true;
+var hxbBool = false;
 var ciBool = false;
 
 function main() {
@@ -52,6 +52,9 @@ function main() {
                 runHxmls();
                 wait();
             case 4:
+                createNonTestPkgs();
+                wait();
+            case 4:
                 cleanup();
                 Sys.println("EXIT");
             default:
@@ -67,6 +70,12 @@ function wait() {
         Sys.sleep(2);
     }
     Sys.println("END WAIT");
+}
+
+function createNonTestPkgs() {
+    for (i in 0...libs.length) {
+        runCommand(libs[i], (ciBool ? 'npx ' : '') + 'haxelib run go2hx -compiler_interp -nodep -port ${5000 + i} ${libs[i]}');
+    }
 }
 
 function createHxmls() {
