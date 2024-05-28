@@ -1,0 +1,6 @@
+-main Example
+-cp golibs
+extraParams.hxml
+--hxb-lib go2hxlibs.zip
+--hl example.hl
+--cmd hl example.hl
