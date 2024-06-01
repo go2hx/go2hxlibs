@@ -1,0 +1,4 @@
+-m _internal.github_com.go2hx.libraries.examples.unicode.internal.Internal
+-lib go2hx
+-cp ./unicode/internal
+--hl examples_unicode_internal.hl

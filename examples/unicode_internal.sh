@@ -1,0 +1,1 @@
+haxelib run go2hx ./unicode/internal -out ./unicode/internal --hxml unicode_internal.hxml --hl examples_unicode_internal.hl --norun 
