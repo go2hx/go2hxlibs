@@ -37,6 +37,8 @@ jobs:
         run: npx haxelib run go2hx extraParams
       - name: cat extraParams
         run: cat extraParams.hxml
+      - name: haxelib setup go2hxlibs
+        run: haxelib dev go2hxlibs .
       - name: Run unicode example
         run: cd examples && haxe unicode.hxml
       - name: Build
