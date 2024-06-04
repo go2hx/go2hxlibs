@@ -2036,8 +2036,6 @@ var _isGraphic : stdgo.Slice<stdgo.GoUInt16> = (new stdgo.Slice<stdgo.GoUInt16>(
 (8239 : stdgo.GoUInt16),
 (8287 : stdgo.GoUInt16),
 (12288 : stdgo.GoUInt16)]).__setNumber32__() : stdgo.Slice<stdgo.GoUInt16>);
-var bitSizeError : (stdgo.GoString, stdgo.GoString, stdgo.GoInt) -> stdgo.Ref<stdgo._internal.strconv.Strconv.NumError> = _bitSizeError;
-var baseError : (stdgo.GoString, stdgo.GoString, stdgo.GoInt) -> stdgo.Ref<stdgo._internal.strconv.Strconv.NumError> = _baseError;
 @:structInit @:using(stdgo._internal.strconv.Strconv.NumError_static_extension) class NumError {
     public var func : stdgo.GoString = "";
     public var num : stdgo.GoString = "";
@@ -3966,25 +3964,6 @@ function _divmod1e9(_x:stdgo.GoUInt64):{ var _0 : stdgo.GoUInt32; var _1 : stdgo
         var __tmp__ = stdgo._internal.math.bits.Bits.mul64((_x >> (1i64 : stdgo.GoUInt64) : stdgo.GoUInt64), (-8543223759426509416i64 : stdgo.GoUInt64)), _hi:stdgo.GoUInt64 = __tmp__._0, __0:stdgo.GoUInt64 = __tmp__._1;
         var _q:stdgo.GoUInt64 = (_hi >> (28i64 : stdgo.GoUInt64) : stdgo.GoUInt64);
         return { _0 : (_q : stdgo.GoUInt32), _1 : ((_x - (_q * (1000000000i64 : stdgo.GoUInt64) : stdgo.GoUInt64) : stdgo.GoUInt64) : stdgo.GoUInt32) };
-    }
-function newDecimal(_i:stdgo.GoUInt64):stdgo.Ref<T_decimal> {
-        var _d = (stdgo.Go.setRef(({} : stdgo._internal.strconv.Strconv.T_decimal)) : stdgo.Ref<stdgo._internal.strconv.Strconv.T_decimal>);
-        _d.assign(_i);
-        return _d;
-    }
-function setOptimize(_b:Bool):Bool {
-        var _old:Bool = _optimize;
-        _optimize = _b;
-        return _old;
-    }
-function parseFloatPrefix(_s:stdgo.GoString, _bitSize:stdgo.GoInt):{ var _0 : stdgo.GoFloat64; var _1 : stdgo.GoInt; var _2 : stdgo.Error; } {
-        return _parseFloatPrefix(_s?.__copy__(), _bitSize);
-    }
-function mulByLog2Log10(_x:stdgo.GoInt):stdgo.GoInt {
-        return _mulByLog2Log10(_x);
-    }
-function mulByLog10Log2(_x:stdgo.GoInt):stdgo.GoInt {
-        return _mulByLog10Log2(_x);
     }
 function formatUint(_i:stdgo.GoUInt64, _base:stdgo.GoInt):stdgo.GoString {
         if (((true && (_i < (100i64 : stdgo.GoUInt64) : Bool) : Bool) && (_base == (10 : stdgo.GoInt)) : Bool)) {
