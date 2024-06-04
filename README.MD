@@ -24,3 +24,10 @@ For OpenFL and Haxeflixel projects:
 ```xml
 <haxelib name="go2hxlibs" />
 ```
+
+
+### Libraries
+
+| api | example | internal example |
+| - | - | - |
+| [unicode](https://go2hx.github.io/stdgo/unicode/utf8/) | [example](https://github.com/go2hx/go2hxlibs/blob/master/examples/unicode/Unicode.hx) | [internal example](https://github.com/go2hx/go2hxlibs/blob/master/examples/unicode/internal/_internal/github_com/go2hx/libraries/examples/unicode/internal/Internal.hx)
