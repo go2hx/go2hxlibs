@@ -1,23 +1,7 @@
 import sys.FileSystem;
 import sys.io.File;
 
-final libs = [
-    "bytes",
-    "encoding/base64",
-    "encoding/hex",
-    "errors",
-    "hash/adler32",
-    "math",
-    "math/bits",
-    "path",
-    "sort",
-    "strconv",
-    "strings",
-    "text/scanner",
-    "unicode",
-    "unicode/utf16",
-    "unicode/utf8"
-];
+final libs:Array<String> = haxe.Json.parse(File.getContent("libs.json"));
 
 var runnningCount = 0;
 var runningCountMutex = new sys.thread.Mutex();

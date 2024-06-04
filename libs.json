@@ -1,0 +1,17 @@
+[
+    "bytes",
+    "encoding/base64",
+    "encoding/hex",
+    "errors",
+    "hash/adler32",
+    "math",
+    "math/bits",
+    "path",
+    "sort",
+    "strconv",
+    "strings",
+    "text/scanner",
+    "unicode",
+    "unicode/utf16",
+    "unicode/utf8"
+]

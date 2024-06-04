@@ -55,13 +55,11 @@ function pathToType(s:String,t:ToType):String {
         case Path:
             return s;
         case Pkg:
-            StringTools.replace(s, "/", ".");
+            Util.pathToPkg(s);
         case Name:
             StringTools.replace(s, "/", "_");
         case FileName:
-            final i = s.lastIndexOf("/");
-            final name = s.substr(i + 1);
-            name.charAt(0).toUpperCase() + name.substr(1);
+            Util.pathToFileName(s);
     }
 }
 
@@ -88,20 +86,4 @@ class FileContent {
         return content == "";
 }
 
-final libs = [
-    "bytes",
-    "encoding/base64",
-    "encoding/hex",
-    "errors",
-    "hash/adler32",
-    "math",
-    "math/bits",
-    "path",
-    "sort",
-    "strconv",
-    "strings",
-    "text/scanner",
-    "unicode",
-    "unicode/utf16",
-    "unicode/utf8"
-];
+final libs:Array<String> = haxe.Json.parse(File.getContent("libs.json"));
