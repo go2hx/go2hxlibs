@@ -1,4 +1,4 @@
-package examples.unicode;
+package;
 
 function main() {
     

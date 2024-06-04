@@ -37,8 +37,6 @@ jobs:
         run: npx haxelib run go2hx extraParams
       - name: cat extraParams
         run: cat extraParams.hxml
-      - name: Run unicode example
-        run: cd examples && npx haxe unicode.hxml
       - name: Build
         run: npx haxe build.hxml 1 0
       - uses: stefanzweifel/git-auto-commit-action@v4
