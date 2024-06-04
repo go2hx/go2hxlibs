@@ -1,18 +1,26 @@
-# Libraries
+<img src="logo.svg" width="270" align="right"/>
 
+go2hxlibs
+===============
 
+Use Golang libraries in Haxe
 
-# TODO
+### Getting Started
+Requires [Haxe 4.3.2+](https://build.haxe.org/builds/haxe/)
 
-* [ ] use json with comments for libs.json
-* [ ] include regression system for libs
-* [ ] write up documentation on how to install and what this project is
-* [ ] hook up to website
-* [ ] create samples for working 3rd party libraries
-* [ ] create dynamic readme generator using haxe.Template
-* [ ] setup go2hxdoc with Main.hx
-* [ ] testing only use available std library in libraries.
-* [ ] have go2hxdoc produce json of what targets passed the test
-* [ ] make the readme look nice, add go2hx branding, add nice gifs of the result of using some of the libraries etc.
-* [ ] push first release, follow the changelog spec and good semantic versioning best practices.
-* [ ] work on samples that integrate into the Haxe ecosystem already such as webp to texture for heaps, 
+*Only tested on the hashlink target*
+
+Install the library from github:
+```sh
+haxelib git go2hxlibs https://github.com/go2hx/go2hxlibs
+```
+
+Including the library in your hxml:
+```hxml
+-lib go2hxlibs
+```
+
+For OpenFL and Haxeflixel projects:
+```xml
+<haxelib name="go2hxlibs" />
+```
