@@ -1,7 +1,0 @@
--cp rnd
--main Rnd
--cp golibs
-extraParams.hxml
---hxb-lib go2hxlibs.zip
---hl rnd.hl
---cmd hl rnd.hl
