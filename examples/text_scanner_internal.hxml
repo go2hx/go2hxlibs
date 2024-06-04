@@ -1,0 +1,6 @@
+-cp text/scanner/internal
+-cp ../golibs
+-m _internal.github_com.go2hx.libraries.examples.text.scanner.internal.Internal
+../extraParams.hxml
+--hl examples_text_scanner_internal.hl
+--cmd hl examples_text_scanner_internal.hl

@@ -1,0 +1,6 @@
+-cp unicode/utf16/internal
+-cp ../golibs
+-m _internal.github_com.go2hx.libraries.examples.unicode.utf16.internal.Internal
+../extraParams.hxml
+--hl examples_unicode_utf16_internal.hl
+--cmd hl examples_unicode_utf16_internal.hl

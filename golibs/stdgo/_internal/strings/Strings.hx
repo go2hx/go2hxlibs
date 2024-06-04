@@ -167,6 +167,13 @@ function compare(_a:stdgo.GoString, _b:stdgo.GoString):stdgo.GoInt {
         };
         return (1 : stdgo.GoInt);
     }
+function stringFind(_pattern:stdgo.GoString, _text:stdgo.GoString):stdgo.GoInt {
+        return _makeStringFinder(_pattern?.__copy__())._next(_text?.__copy__());
+    }
+function dumpTables(_pattern:stdgo.GoString):{ var _0 : stdgo.Slice<stdgo.GoInt>; var _1 : stdgo.Slice<stdgo.GoInt>; } {
+        var _finder = _makeStringFinder(_pattern?.__copy__());
+        return { _0 : (_finder._badCharSkip.__slice__(0) : stdgo.Slice<stdgo.GoInt>), _1 : _finder._goodSuffixSkip };
+    }
 function newReader(_s:stdgo.GoString):stdgo.Ref<Reader> {
         return (stdgo.Go.setRef((new stdgo._internal.strings.Strings.Reader(_s?.__copy__(), (0i64 : stdgo.GoInt64), (-1 : stdgo.GoInt)) : stdgo._internal.strings.Strings.Reader)) : stdgo.Ref<stdgo._internal.strings.Strings.Reader>);
     }
@@ -1607,6 +1614,10 @@ class Replacer_asInterface {
     public dynamic function _build():T_replacer return __self__.value._build();
     @:keep
     public dynamic function _buildOnce():Void __self__.value._buildOnce();
+    @:keep
+    public dynamic function printTrie():stdgo.GoString return __self__.value.printTrie();
+    @:keep
+    public dynamic function replacer():stdgo.AnyInterface return __self__.value.replacer();
     public function new(__self__, __type__) {
         this.__self__ = __self__;
         this.__type__ = __type__;
@@ -1683,6 +1694,19 @@ class Replacer_asInterface {
         _r._r = _r._build();
         _r._oldnew = (null : stdgo.Slice<stdgo.GoString>);
     }
+    @:keep
+    static public function printTrie( _r:stdgo.Ref<Replacer>):stdgo.GoString {
+        @:recv var _r:stdgo.Ref<Replacer> = _r;
+        _r._once.do_(_r._buildOnce);
+        var _gen = (stdgo.Go.typeAssert((stdgo.Go.toInterface(_r._r) : stdgo.Ref<T_genericReplacer>)) : stdgo.Ref<T_genericReplacer>);
+        return _gen._printNode((stdgo.Go.setRef(_gen._root) : stdgo.Ref<stdgo._internal.strings.Strings.T_trieNode>), (0 : stdgo.GoInt))?.__copy__();
+    }
+    @:keep
+    static public function replacer( _r:stdgo.Ref<Replacer>):stdgo.AnyInterface {
+        @:recv var _r:stdgo.Ref<Replacer> = _r;
+        _r._once.do_(_r._buildOnce);
+        return stdgo.Go.toInterface(_r._r);
+    }
 }
 class T_trieNode_asInterface {
     @:keep
@@ -1755,6 +1779,8 @@ class T_genericReplacer_asInterface {
     public dynamic function replace(_s:stdgo.GoString):stdgo.GoString return __self__.value.replace(_s);
     @:keep
     public dynamic function _lookup(_s:stdgo.GoString, _ignoreRoot:Bool):{ var _0 : stdgo.GoString; var _1 : stdgo.GoInt; var _2 : Bool; } return __self__.value._lookup(_s, _ignoreRoot);
+    @:keep
+    public dynamic function _printNode(_t:stdgo.Ref<T_trieNode>, _depth:stdgo.GoInt):stdgo.GoString return __self__.value._printNode(_t, _depth);
     public function new(__self__, __type__) {
         this.__self__ = __self__;
         this.__type__ = __type__;
@@ -1860,6 +1886,29 @@ class T_genericReplacer_asInterface {
             };
         };
         return { _0 : _val, _1 : _keylen, _2 : _found };
+    }
+    @:keep
+    static public function _printNode( _r:stdgo.Ref<T_genericReplacer>, _t:stdgo.Ref<T_trieNode>, _depth:stdgo.GoInt):stdgo.GoString {
+        @:recv var _r:stdgo.Ref<T_genericReplacer> = _r;
+        var _s:stdgo.GoString = ("" : stdgo.GoString);
+        if ((_t._priority > (0 : stdgo.GoInt) : Bool)) {
+            _s = (_s + (("+" : stdgo.GoString))?.__copy__() : stdgo.GoString);
+        } else {
+            _s = (_s + (("-" : stdgo.GoString))?.__copy__() : stdgo.GoString);
+        };
+        _s = (_s + (("\n" : stdgo.GoString))?.__copy__() : stdgo.GoString);
+        if (_t._prefix != (stdgo.Go.str())) {
+            _s = (_s + ((repeat(("." : stdgo.GoString), _depth) + _t._prefix?.__copy__() : stdgo.GoString))?.__copy__() : stdgo.GoString);
+            _s = (_s + (_r._printNode(_t._next, (_depth + (_t._prefix.length) : stdgo.GoInt)))?.__copy__() : stdgo.GoString);
+        } else if (_t._table != null) {
+            for (_b => _m in _r._mapping) {
+                if ((((_m : stdgo.GoInt) != _r._tableSize) && ((_t._table[(_m : stdgo.GoInt)] != null) && ((_t._table[(_m : stdgo.GoInt)] : Dynamic).__nil__ == null || !(_t._table[(_m : stdgo.GoInt)] : Dynamic).__nil__)) : Bool)) {
+                    _s = (_s + ((repeat(("." : stdgo.GoString), _depth) + ((new stdgo.Slice<stdgo.GoUInt8>(1, 1, ...[(_b : stdgo.GoByte)]).__setNumber32__() : stdgo.Slice<stdgo.GoUInt8>) : stdgo.GoString)?.__copy__() : stdgo.GoString))?.__copy__() : stdgo.GoString);
+                    _s = (_s + (_r._printNode(_t._table[(_m : stdgo.GoInt)], (_depth + (1 : stdgo.GoInt) : stdgo.GoInt)))?.__copy__() : stdgo.GoString);
+                };
+            };
+        };
+        return _s;
     }
 }
 class T_stringWriter_asInterface {

@@ -6,24 +6,32 @@ var hxmlInternalContent:FileContent = null;
 var shInternalContent:FileContent = null;
 var haxeFileContent:FileContent = null;
 var goFileContent:FileContent = null;
+final goFileContentPath = "path/internal/name.go";
 
 function main() {
     Sys.setCwd("examples/tmpl");
-    trace(FileSystem.readDirectory("."));
+    //trace(FileSystem.readDirectory("."));
     hxmlContent = new FileContent("name.hxml");
     hxmlInternalContent = new FileContent("name_internal.hxml");
     haxeFileContent = new FileContent("path/Name.hx");
-    goFileContent = new FileContent("path/internal/main.go");
-    create("unicode");
+    goFileContent = new FileContent(goFileContentPath);
+    for (lib in libs)
+        create(lib);
 }
 
 function create(libName:String) {
     final compile = Sys.args()[0] == "1";
     if (compile) {
+        final filePath = tmpl(libName, goFileContentPath);
+        if (File.getContent("../" + filePath) == "") {
+            trace("empty go file:", libName);
+            return;
+        }
         final cmd = "npx haxelib run go2hx ../path/internal -out ../path/internal";
         final cmd = tmpl(libName, cmd);
         trace(cmd);
-        Sys.command(cmd);
+        if (Sys.command(cmd) != 0)
+            throw "fail";
         return;
     }
     FileSystem.createDirectory("../" + libName);

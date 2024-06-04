@@ -1,0 +1,6 @@
+-cp encoding/base64/internal
+-cp ../golibs
+-m _internal.github_com.go2hx.libraries.examples.encoding.base64.internal.Internal
+../extraParams.hxml
+--hl examples_encoding_base64_internal.hl
+--cmd hl examples_encoding_base64_internal.hl

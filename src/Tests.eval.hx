@@ -55,6 +55,17 @@ function main() {
                 createNonTestPkgs();
                 wait();
             case 5:
+                // internal examples
+                Sys.setCwd("examples");
+                runExamples("_internal");
+                wait();
+                Sys.setCwd("..");
+            case 6:
+                // normal examples
+                // Sys.setCwd("examples");
+                // runExamples("");
+                // Sys.setCwd("..");
+            case 7:
                 cleanup();
                 Sys.println("EXIT");
             default:
@@ -98,6 +109,17 @@ function buildHxmls() {
             runCommand(libs[i], (ciBool ? 'npx ' : '') + 'haxe $i.hxml ' + buildTarget(target, '$i') + (hxbBool ? ' --hxb-lib go2hxlibs.zip' : ''));
         }
     }
+}
+
+function runExamples(suffix:String) {
+    for (i in 0...libs.length) {
+        final name = pathToName(libs[i]);
+        runCommand(libs[i], (ciBool ? 'npx ' : '') + 'haxe $name$suffix.hxml');
+    }
+}
+
+function pathToName(path:String):String {
+    return StringTools.replace(path, "/", "_");
 }
 
 function runHxmls() {

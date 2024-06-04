@@ -1,0 +1,6 @@
+-cp bytes/internal
+-cp ../golibs
+-m _internal.github_com.go2hx.libraries.examples.bytes.internal.Internal
+../extraParams.hxml
+--hl examples_bytes_internal.hl
+--cmd hl examples_bytes_internal.hl

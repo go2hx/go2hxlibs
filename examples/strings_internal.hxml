@@ -1,0 +1,6 @@
+-cp strings/internal
+-cp ../golibs
+-m _internal.github_com.go2hx.libraries.examples.strings.internal.Internal
+../extraParams.hxml
+--hl examples_strings_internal.hl
+--cmd hl examples_strings_internal.hl

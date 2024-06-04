@@ -1,0 +1,6 @@
+-cp math/internal
+-cp ../golibs
+-m _internal.github_com.go2hx.libraries.examples.math.internal.Internal
+../extraParams.hxml
+--hl examples_math_internal.hl
+--cmd hl examples_math_internal.hl

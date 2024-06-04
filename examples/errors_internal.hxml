@@ -1,0 +1,6 @@
+-cp errors/internal
+-cp ../golibs
+-m _internal.github_com.go2hx.libraries.examples.errors.internal.Internal
+../extraParams.hxml
+--hl examples_errors_internal.hl
+--cmd hl examples_errors_internal.hl

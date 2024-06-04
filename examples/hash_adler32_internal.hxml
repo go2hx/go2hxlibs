@@ -1,0 +1,6 @@
+-cp hash/adler32/internal
+-cp ../golibs
+-m _internal.github_com.go2hx.libraries.examples.hash.adler32.internal.Internal
+../extraParams.hxml
+--hl examples_hash_adler32_internal.hl
+--cmd hl examples_hash_adler32_internal.hl

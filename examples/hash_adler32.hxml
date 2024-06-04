@@ -1,0 +1,6 @@
+-cp unicode
+-m Unicode
+-cp ../golibs
+../extraParams.hxml
+-hl examples_unicode.hl
+--cmd hl examples_unicode.hl

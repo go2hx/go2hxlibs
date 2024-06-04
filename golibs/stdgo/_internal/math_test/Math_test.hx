@@ -513,7 +513,7 @@ var _vfnextafter32SC : stdgo.Slice<stdgo.GoArray<stdgo.GoFloat32>> = (new stdgo.
 var _nextafter32SC : stdgo.Slice<stdgo.GoFloat32> = (new stdgo.Slice<stdgo.GoFloat32>(10, 10, ...[(0 : stdgo.GoFloat64), (0 : stdgo.GoFloat64), (-1.401298464324817e-45 : stdgo.GoFloat64), (naN() : stdgo.GoFloat32), (1.401298464324817e-45 : stdgo.GoFloat64), (copysign((0 : stdgo.GoFloat64), (-1 : stdgo.GoFloat64)) : stdgo.GoFloat32), (copysign((0 : stdgo.GoFloat64), (-1 : stdgo.GoFloat64)) : stdgo.GoFloat32), (-1.401298464324817e-45 : stdgo.GoFloat64), (naN() : stdgo.GoFloat32), (naN() : stdgo.GoFloat32)]).__setNumber32__() : stdgo.Slice<stdgo.GoFloat32>);
 var _vfnextafter64SC : stdgo.Slice<stdgo.GoArray<stdgo.GoFloat64>> = (new stdgo.Slice<stdgo.GoArray<stdgo.GoFloat64>>(10, 10, ...[(new stdgo.GoArray<stdgo.GoFloat64>(2, 2, ...[(0 : stdgo.GoFloat64), (0 : stdgo.GoFloat64)]).__setNumber32__() : stdgo.GoArray<stdgo.GoFloat64>)?.__copy__(), (new stdgo.GoArray<stdgo.GoFloat64>(2, 2, ...[(0 : stdgo.GoFloat64), copysign((0 : stdgo.GoFloat64), (-1 : stdgo.GoFloat64))]).__setNumber32__() : stdgo.GoArray<stdgo.GoFloat64>)?.__copy__(), (new stdgo.GoArray<stdgo.GoFloat64>(2, 2, ...[(0 : stdgo.GoFloat64), (-1 : stdgo.GoFloat64)]).__setNumber32__() : stdgo.GoArray<stdgo.GoFloat64>)?.__copy__(), (new stdgo.GoArray<stdgo.GoFloat64>(2, 2, ...[(0 : stdgo.GoFloat64), naN()]).__setNumber32__() : stdgo.GoArray<stdgo.GoFloat64>)?.__copy__(), (new stdgo.GoArray<stdgo.GoFloat64>(2, 2, ...[copysign((0 : stdgo.GoFloat64), (-1 : stdgo.GoFloat64)), (1 : stdgo.GoFloat64)]).__setNumber32__() : stdgo.GoArray<stdgo.GoFloat64>)?.__copy__(), (new stdgo.GoArray<stdgo.GoFloat64>(2, 2, ...[copysign((0 : stdgo.GoFloat64), (-1 : stdgo.GoFloat64)), (0 : stdgo.GoFloat64)]).__setNumber32__() : stdgo.GoArray<stdgo.GoFloat64>)?.__copy__(), (new stdgo.GoArray<stdgo.GoFloat64>(2, 2, ...[copysign((0 : stdgo.GoFloat64), (-1 : stdgo.GoFloat64)), copysign((0 : stdgo.GoFloat64), (-1 : stdgo.GoFloat64))]).__setNumber32__() : stdgo.GoArray<stdgo.GoFloat64>)?.__copy__(), (new stdgo.GoArray<stdgo.GoFloat64>(2, 2, ...[copysign((0 : stdgo.GoFloat64), (-1 : stdgo.GoFloat64)), (-1 : stdgo.GoFloat64)]).__setNumber32__() : stdgo.GoArray<stdgo.GoFloat64>)?.__copy__(), (new stdgo.GoArray<stdgo.GoFloat64>(2, 2, ...[naN(), (0 : stdgo.GoFloat64)]).__setNumber32__() : stdgo.GoArray<stdgo.GoFloat64>)?.__copy__(), (new stdgo.GoArray<stdgo.GoFloat64>(2, 2, ...[naN(), naN()]).__setNumber32__() : stdgo.GoArray<stdgo.GoFloat64>)?.__copy__()].concat([for (i in 10 ... (10 > 10 ? 10 : 10 : stdgo.GoInt).toBasic()) new stdgo.GoArray<stdgo.GoFloat64>(2, 2, ...[for (i in 0 ... 2) (0 : stdgo.GoFloat64)])])) : stdgo.Slice<stdgo.GoArray<stdgo.GoFloat64>>);
 var _nextafter64SC : stdgo.Slice<stdgo.GoFloat64> = (new stdgo.Slice<stdgo.GoFloat64>(10, 10, ...[(0 : stdgo.GoFloat64), (0 : stdgo.GoFloat64), (-5e-324 : stdgo.GoFloat64), naN(), (5e-324 : stdgo.GoFloat64), copysign((0 : stdgo.GoFloat64), (-1 : stdgo.GoFloat64)), copysign((0 : stdgo.GoFloat64), (-1 : stdgo.GoFloat64)), (-5e-324 : stdgo.GoFloat64), naN(), naN()]).__setNumber32__() : stdgo.Slice<stdgo.GoFloat64>);
-var _vfpowSC : stdgo.Slice<stdgo.GoArray<stdgo.GoFloat64>> = (new stdgo.Slice<stdgo.GoArray<stdgo.GoFloat64>>(75, 75, ...[
+var _vfpowSC : stdgo.Slice<stdgo.GoArray<stdgo.GoFloat64>> = (new stdgo.Slice<stdgo.GoArray<stdgo.GoFloat64>>(71, 71, ...[
 (new stdgo.GoArray<stdgo.GoFloat64>(2, 2, ...[inf((-1 : stdgo.GoInt)), (-3.141592653589793 : stdgo.GoFloat64)]).__setNumber32__() : stdgo.GoArray<stdgo.GoFloat64>)?.__copy__(),
 (new stdgo.GoArray<stdgo.GoFloat64>(2, 2, ...[inf((-1 : stdgo.GoInt)), (-3 : stdgo.GoFloat64)]).__setNumber32__() : stdgo.GoArray<stdgo.GoFloat64>)?.__copy__(),
 (new stdgo.GoArray<stdgo.GoFloat64>(2, 2, ...[inf((-1 : stdgo.GoInt)), copysign((0 : stdgo.GoFloat64), (-1 : stdgo.GoFloat64))]).__setNumber32__() : stdgo.GoArray<stdgo.GoFloat64>)?.__copy__(),
@@ -584,12 +584,8 @@ var _vfpowSC : stdgo.Slice<stdgo.GoArray<stdgo.GoFloat64>> = (new stdgo.Slice<st
 (new stdgo.GoArray<stdgo.GoFloat64>(2, 2, ...[nextafter((1 : stdgo.GoFloat64), (2 : stdgo.GoFloat64)), (9.223372036854776e+18 : stdgo.GoFloat64)]).__setNumber32__() : stdgo.GoArray<stdgo.GoFloat64>)?.__copy__(),
 (new stdgo.GoArray<stdgo.GoFloat64>(2, 2, ...[nextafter((1 : stdgo.GoFloat64), (-2 : stdgo.GoFloat64)), (9.223372036854776e+18 : stdgo.GoFloat64)]).__setNumber32__() : stdgo.GoArray<stdgo.GoFloat64>)?.__copy__(),
 (new stdgo.GoArray<stdgo.GoFloat64>(2, 2, ...[nextafter((-1 : stdgo.GoFloat64), (2 : stdgo.GoFloat64)), (9.223372036854776e+18 : stdgo.GoFloat64)]).__setNumber32__() : stdgo.GoArray<stdgo.GoFloat64>)?.__copy__(),
-(new stdgo.GoArray<stdgo.GoFloat64>(2, 2, ...[nextafter((-1 : stdgo.GoFloat64), (-2 : stdgo.GoFloat64)), (9.223372036854776e+18 : stdgo.GoFloat64)]).__setNumber32__() : stdgo.GoArray<stdgo.GoFloat64>)?.__copy__(),
-(new stdgo.GoArray<stdgo.GoFloat64>(2, 2, ...[copysign((0 : stdgo.GoFloat64), (-1 : stdgo.GoFloat64)), (1e+19 : stdgo.GoFloat64)]).__setNumber32__() : stdgo.GoArray<stdgo.GoFloat64>)?.__copy__(),
-(new stdgo.GoArray<stdgo.GoFloat64>(2, 2, ...[copysign((0 : stdgo.GoFloat64), (-1 : stdgo.GoFloat64)), (-1e+19 : stdgo.GoFloat64)]).__setNumber32__() : stdgo.GoArray<stdgo.GoFloat64>)?.__copy__(),
-(new stdgo.GoArray<stdgo.GoFloat64>(2, 2, ...[copysign((0 : stdgo.GoFloat64), (-1 : stdgo.GoFloat64)), (9.007199254740991e+15 : stdgo.GoFloat64)]).__setNumber32__() : stdgo.GoArray<stdgo.GoFloat64>)?.__copy__(),
-(new stdgo.GoArray<stdgo.GoFloat64>(2, 2, ...[copysign((0 : stdgo.GoFloat64), (-1 : stdgo.GoFloat64)), (-9.007199254740991e+15 : stdgo.GoFloat64)]).__setNumber32__() : stdgo.GoArray<stdgo.GoFloat64>)?.__copy__()].concat([for (i in 75 ... (75 > 75 ? 75 : 75 : stdgo.GoInt).toBasic()) new stdgo.GoArray<stdgo.GoFloat64>(2, 2, ...[for (i in 0 ... 2) (0 : stdgo.GoFloat64)])])) : stdgo.Slice<stdgo.GoArray<stdgo.GoFloat64>>);
-var _powSC : stdgo.Slice<stdgo.GoFloat64> = (new stdgo.Slice<stdgo.GoFloat64>(75, 75, ...[
+(new stdgo.GoArray<stdgo.GoFloat64>(2, 2, ...[nextafter((-1 : stdgo.GoFloat64), (-2 : stdgo.GoFloat64)), (9.223372036854776e+18 : stdgo.GoFloat64)]).__setNumber32__() : stdgo.GoArray<stdgo.GoFloat64>)?.__copy__()].concat([for (i in 71 ... (71 > 71 ? 71 : 71 : stdgo.GoInt).toBasic()) new stdgo.GoArray<stdgo.GoFloat64>(2, 2, ...[for (i in 0 ... 2) (0 : stdgo.GoFloat64)])])) : stdgo.Slice<stdgo.GoArray<stdgo.GoFloat64>>);
+var _powSC : stdgo.Slice<stdgo.GoFloat64> = (new stdgo.Slice<stdgo.GoFloat64>(71, 71, ...[
 (0 : stdgo.GoFloat64),
 copysign((0 : stdgo.GoFloat64), (-1 : stdgo.GoFloat64)),
 (1 : stdgo.GoFloat64),
@@ -660,11 +656,7 @@ inf((1 : stdgo.GoInt)),
 inf((1 : stdgo.GoInt)),
 (0 : stdgo.GoFloat64),
 (0 : stdgo.GoFloat64),
-inf((1 : stdgo.GoInt)),
-(0 : stdgo.GoFloat64),
-inf((1 : stdgo.GoInt)),
-copysign((0 : stdgo.GoFloat64), (-1 : stdgo.GoFloat64)),
-inf((-1 : stdgo.GoInt))]).__setNumber32__() : stdgo.Slice<stdgo.GoFloat64>);
+inf((1 : stdgo.GoInt))]).__setNumber32__() : stdgo.Slice<stdgo.GoFloat64>);
 var _vfpow10SC : stdgo.Slice<stdgo.GoInt> = (new stdgo.Slice<stdgo.GoInt>(15, 15, ...[
 (-2147483648 : stdgo.GoInt),
 (-324 : stdgo.GoInt),
@@ -745,7 +737,7 @@ var _frexpBC : stdgo.Slice<stdgo._internal.math_test.Math_test.T_fi> = (new stdg
 var _vfldexpBC : stdgo.Slice<stdgo._internal.math_test.Math_test.T_fi> = (new stdgo.Slice<stdgo._internal.math_test.Math_test.T_fi>(10, 10, ...[(new stdgo._internal.math_test.Math_test.T_fi((2.2250738585072014e-308 : stdgo.GoFloat64), (-52 : stdgo.GoInt)) : stdgo._internal.math_test.Math_test.T_fi), (new stdgo._internal.math_test.Math_test.T_fi((2.225073858507201e-308 : stdgo.GoFloat64), (-51 : stdgo.GoInt)) : stdgo._internal.math_test.Math_test.T_fi), (new stdgo._internal.math_test.Math_test.T_fi((5e-324 : stdgo.GoFloat64), (1074 : stdgo.GoInt)) : stdgo._internal.math_test.Math_test.T_fi), (new stdgo._internal.math_test.Math_test.T_fi((1.7976931348623157e+308 : stdgo.GoFloat64), (-2097 : stdgo.GoInt)) : stdgo._internal.math_test.Math_test.T_fi), (new stdgo._internal.math_test.Math_test.T_fi((1 : stdgo.GoFloat64), (-1075 : stdgo.GoInt)) : stdgo._internal.math_test.Math_test.T_fi), (new stdgo._internal.math_test.Math_test.T_fi((-1 : stdgo.GoFloat64), (-1075 : stdgo.GoInt)) : stdgo._internal.math_test.Math_test.T_fi), (new stdgo._internal.math_test.Math_test.T_fi((1 : stdgo.GoFloat64), (1024 : stdgo.GoInt)) : stdgo._internal.math_test.Math_test.T_fi), (new stdgo._internal.math_test.Math_test.T_fi((-1 : stdgo.GoFloat64), (1024 : stdgo.GoInt)) : stdgo._internal.math_test.Math_test.T_fi), (new stdgo._internal.math_test.Math_test.T_fi((1.0000000000000002 : stdgo.GoFloat64), (-1075 : stdgo.GoInt)) : stdgo._internal.math_test.Math_test.T_fi), (new stdgo._internal.math_test.Math_test.T_fi((1 : stdgo.GoFloat64), (-1075 : stdgo.GoInt)) : stdgo._internal.math_test.Math_test.T_fi)].concat([for (i in 10 ... (10 > 10 ? 10 : 10 : stdgo.GoInt).toBasic()) ({} : stdgo._internal.math_test.Math_test.T_fi)])) : stdgo.Slice<stdgo._internal.math_test.Math_test.T_fi>);
 var _ldexpBC : stdgo.Slice<stdgo.GoFloat64> = (new stdgo.Slice<stdgo.GoFloat64>(10, 10, ...[(5e-324 : stdgo.GoFloat64), (1e-323 : stdgo.GoFloat64), (1 : stdgo.GoFloat64), (1e-323 : stdgo.GoFloat64), (0 : stdgo.GoFloat64), copysign((0 : stdgo.GoFloat64), (-1 : stdgo.GoFloat64)), inf((1 : stdgo.GoInt)), inf((-1 : stdgo.GoInt)), (5e-324 : stdgo.GoFloat64), (0 : stdgo.GoFloat64)]).__setNumber32__() : stdgo.Slice<stdgo.GoFloat64>);
 var _logbBC : stdgo.Slice<stdgo.GoFloat64> = (new stdgo.Slice<stdgo.GoFloat64>(8, 8, ...[(-1022 : stdgo.GoFloat64), (-1023 : stdgo.GoFloat64), (-1074 : stdgo.GoFloat64), (1023 : stdgo.GoFloat64), (-1022 : stdgo.GoFloat64), (-1023 : stdgo.GoFloat64), (-1074 : stdgo.GoFloat64), (1023 : stdgo.GoFloat64)]).__setNumber32__() : stdgo.Slice<stdgo.GoFloat64>);
-var _fmaC : stdgo.Slice<T__struct_0> = (new stdgo.Slice<T__struct_0>(44, 44, ...[
+var _fmaC : stdgo.Slice<T__struct_0> = (new stdgo.Slice<T__struct_0>(39, 39, ...[
 ({ _x : (-3.999999999999087 : stdgo.GoFloat64), _y : (-1.1123914289620494e-16 : stdgo.GoFloat64), _z : (-7.999877929687506 : stdgo.GoFloat64), _want : (-7.999877929687505 : stdgo.GoFloat64) } : T__struct_0),
 ({ _x : (-262112.0000004768 : stdgo.GoFloat64), _y : (-0.06251525855623184 : stdgo.GoFloat64), _z : (1.1102230248837136e-16 : stdgo.GoFloat64), _want : (16385.99945072085 : stdgo.GoFloat64) } : T__struct_0),
 ({ _x : (-6.462348523533467e-27 : stdgo.GoFloat64), _y : (-2.3763644720331857e-211 : stdgo.GoFloat64), _z : (4.000000000931324 : stdgo.GoFloat64), _want : (4.000000000931324 : stdgo.GoFloat64) } : T__struct_0),
@@ -769,9 +761,6 @@ var _fmaC : stdgo.Slice<T__struct_0> = (new stdgo.Slice<T__struct_0>(44, 44, ...
 ({ _x : (31.99218749627471 : stdgo.GoFloat64), _y : (-1.7976930544991702e+308 : stdgo.GoFloat64), _z : inf((0 : stdgo.GoInt)), _want : inf((0 : stdgo.GoInt)) } : T__struct_0),
 ({ _x : (-1.7976931281784667e+308 : stdgo.GoFloat64), _y : (-2.0009765625002265 : stdgo.GoFloat64), _z : inf((-1 : stdgo.GoInt)), _want : inf((-1 : stdgo.GoInt)) } : T__struct_0),
 ({ _x : (0 : stdgo.GoFloat64), _y : (0 : stdgo.GoFloat64), _z : (0 : stdgo.GoFloat64), _want : (0 : stdgo.GoFloat64) } : T__struct_0),
-({ _x : copysign((0 : stdgo.GoFloat64), (-1 : stdgo.GoFloat64)), _y : (0 : stdgo.GoFloat64), _z : (0 : stdgo.GoFloat64), _want : (0 : stdgo.GoFloat64) } : T__struct_0),
-({ _x : (0 : stdgo.GoFloat64), _y : (0 : stdgo.GoFloat64), _z : copysign((0 : stdgo.GoFloat64), (-1 : stdgo.GoFloat64)), _want : (0 : stdgo.GoFloat64) } : T__struct_0),
-({ _x : copysign((0 : stdgo.GoFloat64), (-1 : stdgo.GoFloat64)), _y : (0 : stdgo.GoFloat64), _z : copysign((0 : stdgo.GoFloat64), (-1 : stdgo.GoFloat64)), _want : copysign((0 : stdgo.GoFloat64), (-1 : stdgo.GoFloat64)) } : T__struct_0),
 ({ _x : (-1.1754226043408471e-38 : stdgo.GoFloat64), _y : naN(), _z : inf((0 : stdgo.GoInt)), _want : naN() } : T__struct_0),
 ({ _x : (0 : stdgo.GoFloat64), _y : (0 : stdgo.GoFloat64), _z : (2.22507385643494e-308 : stdgo.GoFloat64), _want : (2.22507385643494e-308 : stdgo.GoFloat64) } : T__struct_0),
 ({ _x : (-8.65697792e+09 : stdgo.GoFloat64), _y : naN(), _z : (-7.516192799999999e+09 : stdgo.GoFloat64), _want : naN() } : T__struct_0),
@@ -787,9 +776,7 @@ var _fmaC : stdgo.Slice<T__struct_0> = (new stdgo.Slice<T__struct_0>(44, 44, ...
 ({ _x : (-0.012651981190687427 : stdgo.GoFloat64), _y : (6.911985574912436e+38 : stdgo.GoFloat64), _z : (6.669240527007144e+18 : stdgo.GoFloat64), _want : (-8.745031148409496e+36 : stdgo.GoFloat64) } : T__struct_0),
 ({ _x : (4.612811918325842e+18 : stdgo.GoFloat64), _y : (1.4901161193847641e-08 : stdgo.GoFloat64), _z : (2.6077032311277997e-08 : stdgo.GoFloat64), _want : (6.873625395187494e+10 : stdgo.GoFloat64) } : T__struct_0),
 ({ _x : (-9.094947033611148e-13 : stdgo.GoFloat64), _y : (4.450691014249257e-308 : stdgo.GoFloat64), _z : (2.086006742350485e-308 : stdgo.GoFloat64), _want : (2.086006742346437e-308 : stdgo.GoFloat64) } : T__struct_0),
-({ _x : (-7.751454006381804e-05 : stdgo.GoFloat64), _y : (5.588653777189071e-308 : stdgo.GoFloat64), _z : (-2.2207280111272877e-308 : stdgo.GoFloat64), _want : (-2.2211612130544025e-308 : stdgo.GoFloat64) } : T__struct_0),
-({ _x : (-1 : stdgo.GoFloat64), _y : (1 : stdgo.GoFloat64), _z : (1 : stdgo.GoFloat64), _want : (0 : stdgo.GoFloat64) } : T__struct_0),
-({ _x : (1 : stdgo.GoFloat64), _y : (1 : stdgo.GoFloat64), _z : (-1 : stdgo.GoFloat64), _want : (0 : stdgo.GoFloat64) } : T__struct_0)].concat([for (i in 44 ... (44 > 44 ? 44 : 44 : stdgo.GoInt).toBasic()) ({ _x : (0 : stdgo.GoFloat64), _y : (0 : stdgo.GoFloat64), _z : (0 : stdgo.GoFloat64), _want : (0 : stdgo.GoFloat64) } : T__struct_0)])) : stdgo.Slice<T__struct_0>);
+({ _x : (-7.751454006381804e-05 : stdgo.GoFloat64), _y : (5.588653777189071e-308 : stdgo.GoFloat64), _z : (-2.2207280111272877e-308 : stdgo.GoFloat64), _want : (-2.2211612130544025e-308 : stdgo.GoFloat64) } : T__struct_0)].concat([for (i in 39 ... (39 > 39 ? 39 : 39 : stdgo.GoInt).toBasic()) ({ _x : (0 : stdgo.GoFloat64), _y : (0 : stdgo.GoFloat64), _z : (0 : stdgo.GoFloat64), _want : (0 : stdgo.GoFloat64) } : T__struct_0)])) : stdgo.Slice<T__struct_0>);
 var _sqrt32 : stdgo.Slice<stdgo.GoFloat32> = (new stdgo.Slice<stdgo.GoFloat32>(12, 12, ...[
 (0 : stdgo.GoFloat64),
 (copysign((0 : stdgo.GoFloat64), (-1 : stdgo.GoFloat64)) : stdgo.GoFloat32),
@@ -2640,34 +2627,6 @@ function testFMA(_t:stdgo.Ref<stdgo._internal.testing.Testing.T_>):Void {
             };
         };
     }
-function _fmsub(_x:stdgo.GoFloat64, _y:stdgo.GoFloat64, _z:stdgo.GoFloat64):stdgo.GoFloat64 {
-        return fma(_x, _y, -_z);
-    }
-function _fnmsub(_x:stdgo.GoFloat64, _y:stdgo.GoFloat64, _z:stdgo.GoFloat64):stdgo.GoFloat64 {
-        return fma(-_x, _y, _z);
-    }
-function _fnmadd(_x:stdgo.GoFloat64, _y:stdgo.GoFloat64, _z:stdgo.GoFloat64):stdgo.GoFloat64 {
-        return fma(-_x, _y, -_z);
-    }
-function testFMANegativeArgs(_t:stdgo.Ref<stdgo._internal.testing.Testing.T_>):Void {
-        for (__0 => _c in _fmaC) {
-            var _want:stdgo.GoFloat64 = portableFMA(_c._x, _c._y, -_c._z);
-            var _got:stdgo.GoFloat64 = _fmsub(_c._x, _c._y, _c._z);
-            if (!_alike(_got, _want)) {
-                _t.errorf(("FMA(%g, %g, -(%g)) == %g, want %g" : stdgo.GoString), stdgo.Go.toInterface(_c._x), stdgo.Go.toInterface(_c._y), stdgo.Go.toInterface(_c._z), stdgo.Go.toInterface(_got), stdgo.Go.toInterface(_want));
-            };
-            _want = portableFMA(-_c._x, _c._y, _c._z);
-            _got = _fnmsub(_c._x, _c._y, _c._z);
-            if (!_alike(_got, _want)) {
-                _t.errorf(("FMA(-(%g), %g, %g) == %g, want %g" : stdgo.GoString), stdgo.Go.toInterface(_c._x), stdgo.Go.toInterface(_c._y), stdgo.Go.toInterface(_c._z), stdgo.Go.toInterface(_got), stdgo.Go.toInterface(_want));
-            };
-            _want = portableFMA(-_c._x, _c._y, -_c._z);
-            _got = _fnmadd(_c._x, _c._y, _c._z);
-            if (!_alike(_got, _want)) {
-                _t.errorf(("FMA(-(%g), %g, -(%g)) == %g, want %g" : stdgo.GoString), stdgo.Go.toInterface(_c._x), stdgo.Go.toInterface(_c._y), stdgo.Go.toInterface(_c._z), stdgo.Go.toInterface(_got), stdgo.Go.toInterface(_want));
-            };
-        };
-    }
 function testLargeCos(_t:stdgo.Ref<stdgo._internal.testing.Testing.T_>):Void {
         var _large:stdgo.GoFloat64 = (314159.26535897935 : stdgo.GoFloat64);
         {
@@ -3759,10 +3718,6 @@ function testHugeCos(_t:stdgo.Ref<stdgo._internal.testing.Testing.T_>):Void {
                 if (!_close(_f1, _f2)) {
                     _t.errorf(("Cos(%g) = %g, want %g" : stdgo.GoString), stdgo.Go.toInterface(_trigHuge[(_i : stdgo.GoInt)]), stdgo.Go.toInterface(_f2), stdgo.Go.toInterface(_f1));
                 };
-                var _f3:stdgo.GoFloat64 = cos(-_trigHuge[(_i : stdgo.GoInt)]);
-                if (!_close(_f1, _f3)) {
-                    _t.errorf(("Cos(%g) = %g, want %g" : stdgo.GoString), stdgo.Go.toInterface(-_trigHuge[(_i : stdgo.GoInt)]), stdgo.Go.toInterface(_f3), stdgo.Go.toInterface(_f1));
-                };
             });
         };
     }
@@ -3774,10 +3729,6 @@ function testHugeSin(_t:stdgo.Ref<stdgo._internal.testing.Testing.T_>):Void {
                 var _f2:stdgo.GoFloat64 = sin(_trigHuge[(_i : stdgo.GoInt)]);
                 if (!_close(_f1, _f2)) {
                     _t.errorf(("Sin(%g) = %g, want %g" : stdgo.GoString), stdgo.Go.toInterface(_trigHuge[(_i : stdgo.GoInt)]), stdgo.Go.toInterface(_f2), stdgo.Go.toInterface(_f1));
-                };
-                var _f3:stdgo.GoFloat64 = sin(-_trigHuge[(_i : stdgo.GoInt)]);
-                if (!_close(-_f1, _f3)) {
-                    _t.errorf(("Sin(%g) = %g, want %g" : stdgo.GoString), stdgo.Go.toInterface(-_trigHuge[(_i : stdgo.GoInt)]), stdgo.Go.toInterface(_f3), stdgo.Go.toInterface(-_f1));
                 };
             });
         };
@@ -3791,10 +3742,6 @@ function testHugeSinCos(_t:stdgo.Ref<stdgo._internal.testing.Testing.T_>):Void {
                 if ((!_close(_f1, _f2) || !_close(_g1, _g2) : Bool)) {
                     _t.errorf(("Sincos(%g) = %g, %g, want %g, %g" : stdgo.GoString), stdgo.Go.toInterface(_trigHuge[(_i : stdgo.GoInt)]), stdgo.Go.toInterface(_f2), stdgo.Go.toInterface(_g2), stdgo.Go.toInterface(_f1), stdgo.Go.toInterface(_g1));
                 };
-                var __tmp__ = sincos(-_trigHuge[(_i : stdgo.GoInt)]), _f3:stdgo.GoFloat64 = __tmp__._0, _g3:stdgo.GoFloat64 = __tmp__._1;
-                if ((!_close(-_f1, _f3) || !_close(_g1, _g3) : Bool)) {
-                    _t.errorf(("Sincos(%g) = %g, %g, want %g, %g" : stdgo.GoString), stdgo.Go.toInterface(-_trigHuge[(_i : stdgo.GoInt)]), stdgo.Go.toInterface(_f3), stdgo.Go.toInterface(_g3), stdgo.Go.toInterface(-_f1), stdgo.Go.toInterface(_g1));
-                };
             });
         };
     }
@@ -3806,10 +3753,6 @@ function testHugeTan(_t:stdgo.Ref<stdgo._internal.testing.Testing.T_>):Void {
                 var _f2:stdgo.GoFloat64 = tan(_trigHuge[(_i : stdgo.GoInt)]);
                 if (!_close(_f1, _f2)) {
                     _t.errorf(("Tan(%g) = %g, want %g" : stdgo.GoString), stdgo.Go.toInterface(_trigHuge[(_i : stdgo.GoInt)]), stdgo.Go.toInterface(_f2), stdgo.Go.toInterface(_f1));
-                };
-                var _f3:stdgo.GoFloat64 = tan(-_trigHuge[(_i : stdgo.GoInt)]);
-                if (!_close(-_f1, _f3)) {
-                    _t.errorf(("Tan(%g) = %g, want %g" : stdgo.GoString), stdgo.Go.toInterface(-_trigHuge[(_i : stdgo.GoInt)]), stdgo.Go.toInterface(_f3), stdgo.Go.toInterface(-_f1));
                 };
             });
         };

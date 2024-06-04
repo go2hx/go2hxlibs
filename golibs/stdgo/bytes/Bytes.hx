@@ -6,6 +6,12 @@ private function set_errTooLarge(v:stdgo.Error):stdgo.Error {
     stdgo._internal.bytes.Bytes.errTooLarge = v;
     return v;
 }
+var indexBytePortable(get, set) : (stdgo.Slice<stdgo.GoUInt8>, stdgo.GoUInt8) -> stdgo.GoInt;
+private function get_indexBytePortable():(stdgo.Slice<stdgo.GoUInt8>, stdgo.GoUInt8) -> stdgo.GoInt return (_0, _1) -> stdgo._internal.bytes.Bytes.indexBytePortable([for (i in _0) i], _1);
+private function set_indexBytePortable(v:(stdgo.Slice<stdgo.GoUInt8>, stdgo.GoUInt8) -> stdgo.GoInt):(stdgo.Slice<stdgo.GoUInt8>, stdgo.GoUInt8) -> stdgo.GoInt {
+    stdgo._internal.bytes.Bytes.indexBytePortable = v;
+    return v;
+}
 @:structInit @:using(stdgo.bytes.Bytes.Buffer_static_extension) abstract Buffer(stdgo._internal.bytes.Bytes.Buffer) from stdgo._internal.bytes.Bytes.Buffer to stdgo._internal.bytes.Bytes.Buffer {
     public var _buf(get, set) : Array<std.UInt>;
     function get__buf():Array<std.UInt> return [for (i in this._buf) i];
