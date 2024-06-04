@@ -29,6 +29,6 @@ For OpenFL and Haxeflixel projects:
 ### Libraries
 
 | api | example | internal example | go api |
-| - | - | - |
+| - | - | - | - |
 | [unicode](https://go2hx.github.io/stdgo/unicode/) | [example](https://github.com/go2hx/go2hxlibs/blob/master/examples/unicode/Unicode.hx) | [internal example](https://github.com/go2hx/go2hxlibs/blob/master/examples/unicode/internal/_internal/github_com/go2hx/libraries/examples/unicode/internal/Internal.hx) | [go api](https://pkg.go.dev/unicode) |
 | [strings](https://go2hx.github.io/stdgo/strings/) | [example](https://github.com/go2hx/go2hxlibs/blob/master/examples/strings/Strings.hx) | [internal example](https://github.com/go2hx/go2hxlibs/blob/master/examples/strings/internal/_internal/github_com/go2hx/libraries/examples/strings/internal/Internal.hx) | [go api](https://pkg.go.dev/strings) |
