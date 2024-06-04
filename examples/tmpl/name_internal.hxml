@@ -1,0 +1,6 @@
+-cp path/internal
+-cp ../golibs
+-m _internal.github_com.go2hx.libraries.examples.pkg.internal.Internal
+../extraParams.hxml
+--hl examples_name_internal.hl
+--cmd hl examples_name_internal.hl
