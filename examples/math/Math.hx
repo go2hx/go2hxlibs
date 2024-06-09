@@ -1,6 +1,5 @@
-package examples.unicode;
 
 function main() {
-    
+    trace(stdgo.math.Math.tanh(0));
 }
 
