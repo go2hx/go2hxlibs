@@ -1,3 +1,4 @@
 -m Main
 -lib go2hxlibs
 --hl hello_world.hl
+--cmd hl hello_world.hl
