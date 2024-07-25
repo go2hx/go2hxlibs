@@ -163,7 +163,7 @@ function _invalidSep(_x:stdgo.GoString):stdgo.GoInt {
             };
         };
         stdgo.Go.cfor((_i < (_x.length) : Bool), _i++, {
-            var _p = _d;
+            var _p = (_d : stdgo.GoInt32);
             _d = (_x[(_i : stdgo.GoInt)] : stdgo.GoRune);
             if (_d == ((95 : stdgo.GoInt32))) {
                 if (_p != ((48 : stdgo.GoInt32))) {
@@ -208,7 +208,7 @@ class Position_asInterface {
     @:keep
     static public function string( _pos:Position):stdgo.GoString {
         @:recv var _pos:Position = _pos?.__copy__();
-        var _s = _pos.filename?.__copy__();
+        var _s = (_pos.filename?.__copy__() : stdgo.GoString);
         if (_s == (stdgo.Go.str())) {
             _s = ("<input>" : stdgo.GoString);
         };
@@ -313,7 +313,7 @@ class Scanner_asInterface {
     static public function scan( _s:stdgo.Ref<Scanner>):stdgo.GoRune {
         stdgo._internal.internal.Macro.controlFlow({
             @:recv var _s:stdgo.Ref<Scanner> = _s;
-            var _ch = _s.peek();
+            var _ch = (_s.peek() : stdgo.GoInt32);
             _s._tokPos = (-1 : stdgo.GoInt);
             _s.position.line = (0 : stdgo.GoInt);
             @:label("redo") while ((_s.whitespace & (((1i64 : stdgo.GoUInt64) << (_ch : stdgo.GoUInt) : stdgo.GoUInt64)) : stdgo.GoUInt64) != ((0i64 : stdgo.GoUInt64))) {
@@ -329,7 +329,7 @@ class Scanner_asInterface {
                 _s.position.line = (_s._line - (1 : stdgo.GoInt) : stdgo.GoInt);
                 _s.position.column = _s._lastLineLen;
             };
-            var _tok = _ch;
+            var _tok = (_ch : stdgo.GoInt32);
             {
                 var __switchIndex__ = -1;
                 var __run__ = true;
@@ -441,7 +441,7 @@ class Scanner_asInterface {
                 _s._error(("comment not terminated" : stdgo.GoString));
                 break;
             };
-            var _ch0 = _ch;
+            var _ch0 = (_ch : stdgo.GoInt32);
             _ch = _s._next();
             if (((_ch0 == (42 : stdgo.GoInt32)) && (_ch == (47 : stdgo.GoInt32)) : Bool)) {
                 _ch = _s._next();
@@ -460,7 +460,7 @@ class Scanner_asInterface {
     @:keep
     static public function _scanRawString( _s:stdgo.Ref<Scanner>):Void {
         @:recv var _s:stdgo.Ref<Scanner> = _s;
-        var _ch = _s._next();
+        var _ch = (_s._next() : stdgo.GoInt32);
         while (_ch != ((96 : stdgo.GoInt32))) {
             if ((_ch < (0 : stdgo.GoInt32) : Bool)) {
                 _s._error(("literal not terminated" : stdgo.GoString));
@@ -473,7 +473,7 @@ class Scanner_asInterface {
     static public function _scanString( _s:stdgo.Ref<Scanner>, _quote:stdgo.GoRune):stdgo.GoInt {
         @:recv var _s:stdgo.Ref<Scanner> = _s;
         var _n = (0 : stdgo.GoInt);
-        var _ch = _s._next();
+        var _ch = (_s._next() : stdgo.GoInt32);
         while (_ch != (_quote)) {
             if (((_ch == (10 : stdgo.GoInt32)) || (_ch < (0 : stdgo.GoInt32) : Bool) : Bool)) {
                 _s._error(("literal not terminated" : stdgo.GoString));
@@ -491,7 +491,7 @@ class Scanner_asInterface {
     @:keep
     static public function _scanEscape( _s:stdgo.Ref<Scanner>, _quote:stdgo.GoRune):stdgo.GoRune {
         @:recv var _s:stdgo.Ref<Scanner> = _s;
-        var _ch = _s._next();
+        var _ch = (_s._next() : stdgo.GoInt32);
         {
             final __value__ = _ch;
             if (__value__ == ((97 : stdgo.GoInt32)) || __value__ == ((98 : stdgo.GoInt32)) || __value__ == ((102 : stdgo.GoInt32)) || __value__ == ((110 : stdgo.GoInt32)) || __value__ == ((114 : stdgo.GoInt32)) || __value__ == ((116 : stdgo.GoInt32)) || __value__ == ((118 : stdgo.GoInt32)) || __value__ == ((92 : stdgo.GoInt32)) || __value__ == (_quote)) {
@@ -526,9 +526,9 @@ class Scanner_asInterface {
     static public function _scanNumber( _s:stdgo.Ref<Scanner>, _ch:stdgo.GoRune, _seenDot:Bool):{ var _0 : stdgo.GoRune; var _1 : stdgo.GoRune; } {
         @:recv var _s:stdgo.Ref<Scanner> = _s;
         var _base = (10 : stdgo.GoInt);
-        var _prefix = ((0 : stdgo.GoInt32) : stdgo.GoRune);
+        var _prefix = (((0 : stdgo.GoInt32) : stdgo.GoRune) : stdgo.GoInt32);
         var _digsep = (0 : stdgo.GoInt);
-        var _invalid = ((0 : stdgo.GoInt32) : stdgo.GoRune);
+        var _invalid = (((0 : stdgo.GoInt32) : stdgo.GoRune) : stdgo.GoInt32);
         var _tok:stdgo.GoRune = (0 : stdgo.GoInt32);
         var _ds:stdgo.GoInt = (0 : stdgo.GoInt);
         if (!_seenDot) {
@@ -599,7 +599,7 @@ class Scanner_asInterface {
             _s._error((_litname(_prefix) + (" has no digits" : stdgo.GoString)?.__copy__() : stdgo.GoString)?.__copy__());
         };
         {
-            var _e = _lower(_ch);
+            var _e = (_lower(_ch) : stdgo.GoInt32);
             if (((((_e == (101 : stdgo.GoInt32)) || (_e == (112 : stdgo.GoInt32)) : Bool)) && ((_s.mode & (16u32 : stdgo.GoUInt) : stdgo.GoUInt) != (0u32 : stdgo.GoUInt)) : Bool)) {
                 if (((_e == ((101 : stdgo.GoInt32)) && _prefix != ((0 : stdgo.GoInt32)) : Bool) && (_prefix != (48 : stdgo.GoInt32)) : Bool)) {
                     _s._errorf(("%q exponent requires decimal mantissa" : stdgo.GoString), stdgo.Go.toInterface(_ch));
@@ -630,7 +630,7 @@ class Scanner_asInterface {
         if ((_digsep & (2 : stdgo.GoInt) : stdgo.GoInt) != ((0 : stdgo.GoInt))) {
             _s._tokEnd = (_s._srcPos - _s._lastCharLen : stdgo.GoInt);
             {
-                var _i = _invalidSep(_s.tokenText()?.__copy__());
+                var _i = (_invalidSep(_s.tokenText()?.__copy__()) : stdgo.GoInt);
                 if ((_i >= (0 : stdgo.GoInt) : Bool)) {
                     _s._error(("\'_\' must separate successive digits" : stdgo.GoString));
                 };
@@ -644,7 +644,7 @@ class Scanner_asInterface {
         var _ch = (0 : stdgo.GoInt32), _digsep = (0 : stdgo.GoInt);
         _ch = _ch0;
         if ((_base <= (10 : stdgo.GoInt) : Bool)) {
-            var _max = (((48 : stdgo.GoInt) + _base : stdgo.GoInt) : stdgo.GoRune);
+            var _max = ((((48 : stdgo.GoInt) + _base : stdgo.GoInt) : stdgo.GoRune) : stdgo.GoInt32);
             while ((_isDecimal(_ch) || (_ch == (95 : stdgo.GoInt32)) : Bool)) {
                 var _ds = (1 : stdgo.GoInt);
                 if (_ch == ((95 : stdgo.GoInt32))) {
@@ -670,7 +670,7 @@ class Scanner_asInterface {
     @:keep
     static public function _scanIdentifier( _s:stdgo.Ref<Scanner>):stdgo.GoRune {
         @:recv var _s:stdgo.Ref<Scanner> = _s;
-        var _ch = _s._next();
+        var _ch = (_s._next() : stdgo.GoInt32);
         {
             var _i = (1 : stdgo.GoInt);
             stdgo.Go.cfor(_s._isIdentRune(_ch, _i), _i++, {
@@ -702,7 +702,7 @@ class Scanner_asInterface {
             _s.error(_s, _msg?.__copy__());
             return;
         };
-        var _pos = _s.position?.__copy__();
+        var _pos = (_s.position?.__copy__() : stdgo._internal.text.scanner.Scanner.Position);
         if (!_pos.isValid()) {
             _pos = _s.pos()?.__copy__();
         };
@@ -724,7 +724,7 @@ class Scanner_asInterface {
         @:recv var _s:stdgo.Ref<Scanner> = _s;
         _s._tokPos = (-1 : stdgo.GoInt);
         _s.position.line = (0 : stdgo.GoInt);
-        var _ch = _s.peek();
+        var _ch = (_s.peek() : stdgo.GoInt32);
         if (_ch != ((-1 : stdgo.GoInt32))) {
             _s._ch = _s._next();
         };
@@ -733,7 +733,7 @@ class Scanner_asInterface {
     @:keep
     static public function _next( _s:stdgo.Ref<Scanner>):stdgo.GoRune {
         @:recv var _s:stdgo.Ref<Scanner> = _s;
-        var __0 = (_s._srcBuf[(_s._srcPos : stdgo.GoInt)] : stdgo.GoRune), __1 = (1 : stdgo.GoInt);
+        var __0 = ((_s._srcBuf[(_s._srcPos : stdgo.GoInt)] : stdgo.GoRune) : stdgo.GoInt32), __1 = (1 : stdgo.GoInt);
 var _width = __1, _ch = __0;
         if ((_ch >= (128 : stdgo.GoInt32) : Bool)) {
             while ((((_s._srcPos + (4 : stdgo.GoInt) : stdgo.GoInt) > _s._srcEnd : Bool) && !stdgo._internal.unicode.utf8.Utf8.fullRune((_s._srcBuf.__slice__(_s._srcPos, _s._srcEnd) : stdgo.Slice<stdgo.GoUInt8>)) : Bool)) {

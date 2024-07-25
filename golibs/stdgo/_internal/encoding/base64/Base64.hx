@@ -766,9 +766,9 @@ class Encoding_asInterface {
                     _dlen = _j;
                     break;
                 };
-                var _in = _src[(_si : stdgo.GoInt)];
+                var _in = (_src[(_si : stdgo.GoInt)] : stdgo.GoUInt8);
                 _si++;
-                var _out = _enc._decodeMap[(_in : stdgo.GoInt)];
+                var _out = (_enc._decodeMap[(_in : stdgo.GoInt)] : stdgo.GoUInt8);
                 if (_out != ((255 : stdgo.GoUInt8))) {
                     _dbuf[(_j : stdgo.GoInt)] = _out;
                     continue;
