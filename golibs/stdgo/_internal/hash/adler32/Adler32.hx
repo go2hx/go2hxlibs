@@ -20,7 +20,8 @@ function _readUint32(_b:stdgo.Slice<stdgo.GoByte>):stdgo.GoUInt32 {
         return ((((_b[(3 : stdgo.GoInt)] : stdgo.GoUInt32) | ((_b[(2 : stdgo.GoInt)] : stdgo.GoUInt32) << (8i64 : stdgo.GoUInt64) : stdgo.GoUInt32) : stdgo.GoUInt32) | ((_b[(1 : stdgo.GoInt)] : stdgo.GoUInt32) << (16i64 : stdgo.GoUInt64) : stdgo.GoUInt32) : stdgo.GoUInt32) | ((_b[(0 : stdgo.GoInt)] : stdgo.GoUInt32) << (24i64 : stdgo.GoUInt64) : stdgo.GoUInt32) : stdgo.GoUInt32);
     }
 function _update(_d:T_digest, _p:stdgo.Slice<stdgo.GoByte>):T_digest {
-        var __0:stdgo.GoUInt32 = ((_d & (65535u32 : stdgo._internal.hash.adler32.Adler32.T_digest) : stdgo._internal.hash.adler32.Adler32.T_digest) : stdgo.GoUInt32), __1:stdgo.GoUInt32 = ((_d >> (16i64 : stdgo.GoUInt64) : stdgo._internal.hash.adler32.Adler32.T_digest) : stdgo.GoUInt32), _s2:stdgo.GoUInt32 = __1, _s1:stdgo.GoUInt32 = __0;
+        var __0 = ((_d & (65535u32 : stdgo._internal.hash.adler32.Adler32.T_digest) : stdgo._internal.hash.adler32.Adler32.T_digest) : stdgo.GoUInt32), __1 = ((_d >> (16i64 : stdgo.GoUInt64) : stdgo._internal.hash.adler32.Adler32.T_digest) : stdgo.GoUInt32);
+var _s2 = __1, _s1 = __0;
         while (((_p.length) > (0 : stdgo.GoInt) : Bool)) {
             var _q:stdgo.Slice<stdgo.GoByte> = (null : stdgo.Slice<stdgo.GoUInt8>);
             if (((_p.length) > (5552 : stdgo.GoInt) : Bool)) {
@@ -92,7 +93,7 @@ class T_digest_asInterface {
     @:keep
     @:pointer
     static public function sum(____:T_digest,  _d:stdgo.Pointer<T_digest>, _in:stdgo.Slice<stdgo.GoByte>):stdgo.Slice<stdgo.GoByte> {
-        var _s:stdgo.GoUInt32 = (_d.value : stdgo.GoUInt32);
+        var _s = (_d.value : stdgo.GoUInt32);
         return (_in.__append__(((_s >> (24i64 : stdgo.GoUInt64) : stdgo.GoUInt32) : stdgo.GoByte), ((_s >> (16i64 : stdgo.GoUInt64) : stdgo.GoUInt32) : stdgo.GoByte), ((_s >> (8i64 : stdgo.GoUInt64) : stdgo.GoUInt32) : stdgo.GoByte), (_s : stdgo.GoByte)));
     }
     @:keep
@@ -103,7 +104,7 @@ class T_digest_asInterface {
     @:keep
     @:pointer
     static public function write(____:T_digest,  _d:stdgo.Pointer<T_digest>, _p:stdgo.Slice<stdgo.GoByte>):{ var _0 : stdgo.GoInt; var _1 : stdgo.Error; } {
-        var _nn:stdgo.GoInt = (0 : stdgo.GoInt), _err:stdgo.Error = (null : stdgo.Error);
+        var _nn = (0 : stdgo.GoInt), _err = (null : stdgo.Error);
         _d.value = _update(_d.value, _p);
         return { _0 : (_p.length), _1 : (null : stdgo.Error) };
     }
